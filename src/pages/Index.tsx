@@ -3,13 +3,13 @@ import { Menu, User, TrendingDown, TrendingUp } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen flex flex-col" style={{ background: 'linear-gradient(135deg, hsl(48, 85%, 96%) 0%, hsl(210, 20%, 98%) 50%, hsl(210, 20%, 98%) 100%)' }}>
       {/* Header with Profile and Menu */}
       <header className="flex items-center justify-between p-5 border-b-3 border-border">
         <Button
           variant="ghost"
           size="icon"
-          className="rounded-2xl border-3 border-border bg-badge-blue/30 hover:bg-badge-blue/50 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-all duration-300"
+          className="rounded-2xl border-3 border-border bg-badge-yellow/50 hover:bg-badge-yellow/70 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-all duration-300"
         >
           <Menu className="h-5 w-5" />
         </Button>
@@ -17,7 +17,7 @@ const Index = () => {
         <Button
           variant="ghost"
           size="icon"
-          className="rounded-2xl border-3 border-border bg-badge-pink/30 hover:bg-badge-pink/50 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-all duration-300"
+          className="rounded-2xl border-3 border-border bg-badge-pink/50 hover:bg-badge-pink/70 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-all duration-300"
         >
           <User className="h-5 w-5" />
         </Button>
@@ -35,7 +35,8 @@ const Index = () => {
 
         {/* Balance Display */}
         <div className="w-full max-w-sm mb-20">
-          <div className="text-center p-8 rounded-3xl border-3 border-border bg-card shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
+          <div className="text-center p-8 rounded-3xl border-3 border-border bg-card shadow-[0_2px_8px_rgba(0,0,0,0.06)] relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-2 h-full bg-badge-yellow"></div>
             <p className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wide">Current Balance</p>
             <h2 className="text-6xl font-black tracking-tight">$0.00</h2>
           </div>
