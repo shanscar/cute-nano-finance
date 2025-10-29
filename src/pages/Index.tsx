@@ -75,9 +75,9 @@ const Index = () => {
         {/* Bento Grid - Action Buttons & Stats */}
         <div className="w-full max-w-2xl grid grid-cols-12 gap-4 relative">
           {/* Top Row: Earn Button → Connector → Income Stat */}
-          <div className="col-span-12 flex items-center justify-center gap-6">
+          <div className="col-span-12 flex items-center justify-center gap-3 md:gap-6">
             <Button
-              className="w-[240px] md:w-[280px] h-32 text-lg font-bold rounded-3xl border-4 border-border bg-income text-income-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_rgba(0,0,0,1)] hover:-translate-y-2 hover:-translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern"
+              className="w-[220px] md:w-[280px] h-32 text-lg font-bold rounded-3xl border-4 border-border bg-income text-income-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_rgba(0,0,0,1)] hover:-translate-y-2 hover:-translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern"
               style={{ transform: 'rotate(-0.5deg)' }}
             >
               <span className="relative z-10 flex items-center gap-4">
@@ -98,23 +98,23 @@ const Index = () => {
 
             {/* Income Stat */}
             <div 
-              className="w-[160px] md:w-[180px] h-24 text-center p-5 rounded-2xl border-4 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all duration-300 relative z-0 overflow-hidden"
+              className="w-[170px] md:w-[180px] h-24 text-center px-4 py-4 md:px-5 md:py-5 rounded-2xl border-4 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all duration-300 relative z-0 overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-income"></div>
-              <p className="text-xs font-bold text-foreground/70 mb-2 uppercase tracking-wide">This Month</p>
-              <p className="text-2xl font-black text-foreground">+$0</p>
+              <p className="text-[10px] md:text-xs font-bold text-foreground/70 mb-1.5 md:mb-2 uppercase tracking-wide">This Month</p>
+              <p className="text-2xl font-black text-foreground pb-1">+$0</p>
             </div>
           </div>
 
           {/* Bottom Row: Expense Stat → Connector → Spend Button */}
-          <div className="col-span-12 flex items-center justify-center gap-6">
+          <div className="col-span-12 flex items-center justify-center gap-3 md:gap-6">
             {/* Expense Stat */}
             <div 
-              className="w-[160px] md:w-[180px] h-24 text-center p-5 rounded-2xl border-4 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all duration-300 relative z-0 overflow-hidden"
+              className="w-[170px] md:w-[180px] h-24 text-center px-4 py-4 md:px-5 md:py-5 rounded-2xl border-4 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all duration-300 relative z-0 overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-expense"></div>
-              <p className="text-xs font-bold text-foreground/70 mb-2 uppercase tracking-wide">This Month</p>
-              <p className="text-2xl font-black text-foreground">-$0</p>
+              <p className="text-[10px] md:text-xs font-bold text-foreground/70 mb-1.5 md:mb-2 uppercase tracking-wide">This Month</p>
+              <p className="text-2xl font-black text-foreground pb-1">-$0</p>
             </div>
 
             {/* Connector SVG (flipped horizontally) */}
@@ -126,7 +126,7 @@ const Index = () => {
             />
 
             <Button
-              className="w-[240px] md:w-[280px] h-32 text-lg font-bold rounded-3xl border-4 border-border bg-expense text-expense-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_rgba(0,0,0,1)] hover:-translate-y-2 hover:-translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern"
+              className="w-[220px] md:w-[280px] h-32 text-lg font-bold rounded-3xl border-4 border-border bg-expense text-expense-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_rgba(0,0,0,1)] hover:-translate-y-2 hover:-translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern"
             >
               <span className="relative z-10 flex items-center gap-4">
                 <span className="flex items-center justify-center w-12 h-12 rounded-xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)]">
