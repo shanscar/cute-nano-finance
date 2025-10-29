@@ -57,7 +57,7 @@ const Index = () => {
 
           {/* Income Stat - Top Right, Overlapping */}
           <div 
-            className="col-span-5 h-24 text-center p-5 rounded-2xl border-3 border-border bg-income/40 shadow-[4px_4px_0_rgba(0,0,0,1)] hover:shadow-[6px_6px_0_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-300 relative z-20"
+            className="col-span-5 h-24 text-center p-5 rounded-2xl border-2 border-dashed border-border/50 bg-income/40 shadow-[2px_2px_0_rgba(0,0,0,0.25)] transition-all duration-300 relative z-20"
             style={{ transform: 'translate(-12px, 20px)' }}
           >
             <p className="text-xs font-bold text-foreground/70 mb-2 uppercase tracking-wide">This Month</p>
@@ -66,7 +66,7 @@ const Index = () => {
 
           {/* Expense Stat - Bottom Left, Overlapping */}
           <div 
-            className="col-span-5 h-24 text-center p-5 rounded-2xl border-3 border-border bg-expense/40 shadow-[4px_4px_0_rgba(0,0,0,1)] hover:shadow-[6px_6px_0_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-300 relative z-20"
+            className="col-span-5 h-24 text-center p-5 rounded-2xl border-2 border-dashed border-border/50 bg-expense/40 shadow-[2px_2px_0_rgba(0,0,0,0.25)] transition-all duration-300 relative z-20"
             style={{ transform: 'translate(12px, -8px) rotate(1deg)' }}
           >
             <p className="text-xs font-bold text-foreground/70 mb-2 uppercase tracking-wide">This Month</p>
