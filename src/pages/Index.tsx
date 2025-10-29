@@ -3,6 +3,7 @@ import { Menu, User, PiggyBank, CreditCard } from "lucide-react";
 import eyesIcon from "@/assets/eyes.svg";
 import sparkleIcon from "@/assets/sparkle.svg";
 import underlineIcon from "@/assets/underline.svg";
+import connectorSvg from "@/assets/connector.svg";
 
 const Index = () => {
   return (
@@ -73,51 +74,69 @@ const Index = () => {
 
         {/* Bento Grid - Action Buttons & Stats */}
         <div className="w-full max-w-2xl grid grid-cols-12 gap-4 relative">
-          {/* Add Income Button - Large, Top Left */}
-          <Button
-            className="col-span-7 h-32 text-lg font-bold rounded-3xl border-4 border-border bg-income text-income-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_rgba(0,0,0,1)] hover:-translate-y-2 hover:-translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern"
-            style={{ transform: 'rotate(-0.5deg)' }}
-          >
-            <span className="relative z-10 flex items-center gap-4">
-              <span className="flex items-center justify-center w-12 h-12 rounded-xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)]">
-                <PiggyBank className="h-6 w-6" />
+          {/* Top Row: Earn Button → Connector → Income Stat */}
+          <div className="col-span-12 flex items-center justify-center gap-3">
+            <Button
+              className="w-[280px] h-32 text-lg font-bold rounded-3xl border-4 border-border bg-income text-income-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_rgba(0,0,0,1)] hover:-translate-y-2 hover:-translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern"
+              style={{ transform: 'rotate(-0.5deg)' }}
+            >
+              <span className="relative z-10 flex items-center gap-4">
+                <span className="flex items-center justify-center w-12 h-12 rounded-xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)]">
+                  <PiggyBank className="h-6 w-6" />
+                </span>
+                <span className="text-xl font-black tracking-wide">Earn</span>
               </span>
-              <span className="text-xl font-black tracking-wide">Earn</span>
-            </span>
-          </Button>
+            </Button>
 
-          {/* Income Stat - Top Right, Overlapping */}
-          <div 
-            className="col-span-5 h-24 text-center p-5 rounded-2xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all duration-300 relative z-20 overflow-hidden"
-            style={{ transform: 'translate(-12px, 20px)' }}
-          >
-            <div className="absolute top-0 left-0 w-1 h-full bg-income"></div>
-            <p className="text-xs font-bold text-foreground/70 mb-2 uppercase tracking-wide">This Month</p>
-            <p className="text-2xl font-black text-foreground">+$0</p>
+            {/* Connector SVG */}
+            <img 
+              src={connectorSvg} 
+              alt="" 
+              className="w-12 h-auto flex-shrink-0"
+              aria-hidden="true"
+            />
+
+            {/* Income Stat */}
+            <div 
+              className="w-[180px] h-24 text-center p-5 rounded-2xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all duration-300 relative z-20 overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-1 h-full bg-income"></div>
+              <p className="text-xs font-bold text-foreground/70 mb-2 uppercase tracking-wide">This Month</p>
+              <p className="text-2xl font-black text-foreground">+$0</p>
+            </div>
           </div>
 
-          {/* Expense Stat - Bottom Left, Overlapping */}
-          <div 
-            className="col-span-5 h-24 text-center p-5 rounded-2xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all duration-300 relative z-20 overflow-hidden"
-            style={{ transform: 'translate(12px, -8px) rotate(1deg)' }}
-          >
-            <div className="absolute top-0 left-0 w-1 h-full bg-expense"></div>
-            <p className="text-xs font-bold text-foreground/70 mb-2 uppercase tracking-wide">This Month</p>
-            <p className="text-2xl font-black text-foreground">-$0</p>
-          </div>
+          {/* Bottom Row: Expense Stat → Connector → Spend Button */}
+          <div className="col-span-12 flex items-center justify-center gap-3">
+            {/* Expense Stat */}
+            <div 
+              className="w-[180px] h-24 text-center p-5 rounded-2xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all duration-300 relative z-20 overflow-hidden"
+              style={{ transform: 'rotate(1deg)' }}
+            >
+              <div className="absolute top-0 left-0 w-1 h-full bg-expense"></div>
+              <p className="text-xs font-bold text-foreground/70 mb-2 uppercase tracking-wide">This Month</p>
+              <p className="text-2xl font-black text-foreground">-$0</p>
+            </div>
 
-          {/* Add Expense Button - Large, Bottom Right */}
-          <Button
-            className="col-span-7 h-32 text-lg font-bold rounded-3xl border-4 border-border bg-expense text-expense-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_rgba(0,0,0,1)] hover:-translate-y-2 hover:-translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern"
-            style={{ transform: 'translate(-8px, -12px)' }}
-          >
-            <span className="relative z-10 flex items-center gap-4">
-              <span className="flex items-center justify-center w-12 h-12 rounded-xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)]">
-                <CreditCard className="h-6 w-6" />
+            {/* Connector SVG (flipped horizontally) */}
+            <img 
+              src={connectorSvg} 
+              alt="" 
+              className="w-12 h-auto flex-shrink-0 transform scale-x-[-1]"
+              aria-hidden="true"
+            />
+
+            <Button
+              className="w-[280px] h-32 text-lg font-bold rounded-3xl border-4 border-border bg-expense text-expense-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_rgba(0,0,0,1)] hover:-translate-y-2 hover:-translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern"
+            >
+              <span className="relative z-10 flex items-center gap-4">
+                <span className="flex items-center justify-center w-12 h-12 rounded-xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)]">
+                  <CreditCard className="h-6 w-6" />
+                </span>
+                <span className="text-xl font-black tracking-wide">Spend</span>
               </span>
-              <span className="text-xl font-black tracking-wide">Spend</span>
-            </span>
-          </Button>
+            </Button>
+          </div>
         </div>
       </main>
     </div>
