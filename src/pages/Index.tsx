@@ -81,8 +81,8 @@ const Index = () => {
               className="group w-[220px] md:w-[280px] h-32 text-lg font-bold rounded-3xl border-4 border-border bg-income hover:bg-income text-income-foreground shadow-[0_4px_20px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.16),0_4px_12px_rgba(0,0,0,0.12)] hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 ease-out relative z-10 dotted-pattern"
             >
               <span className="relative z-10 flex items-center gap-4">
-                <span className="flex items-center justify-center w-12 h-12 rounded-xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3">
-                  <img src={piggybankCartoon} alt="Piggy Bank" className="h-16 w-16 drop-shadow-lg" />
+                <span className="flex items-center justify-center w-24 h-24 rounded-xl border-4 border-black bg-badge-yellow rotate-6 shadow-[6px_6px_0px_rgba(0,0,0,0.4)] transition-all duration-300 group-hover:scale-125 group-hover:-rotate-6 animate-pulse">
+                  <img src={piggybankCartoon} alt="Piggy Bank" className="h-24 w-24 drop-shadow-2xl" />
                 </span>
                 <span className="text-xl font-black tracking-wide">Earn</span>
               </span>
