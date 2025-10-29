@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 210 20% 98%;
     --foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
@@ -20,13 +20,13 @@ All colors MUST be HSL.
     --primary: 0 0% 0%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 98%;
+    --secondary: 210 15% 96%;
     --secondary-foreground: 0 0% 0%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 210 15% 94%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 0 0% 96%;
+    --accent: 210 20% 95%;
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
@@ -38,19 +38,22 @@ All colors MUST be HSL.
 
     --radius: 1.5rem;
 
-    /* Vibrant accent colors for actions */
-    --income: 174 72% 56%;
+    /* Soft pastel accent colors - brutalist style */
+    --income: 160 40% 75%;
     --income-foreground: 0 0% 0%;
-    --expense: 11 92% 66%;
+    --expense: 350 60% 80%;
     --expense-foreground: 0 0% 0%;
 
-    /* Gradients */
-    --gradient-income: linear-gradient(135deg, hsl(174 72% 56%), hsl(174 72% 66%));
-    --gradient-expense: linear-gradient(135deg, hsl(11 92% 66%), hsl(11 92% 76%));
+    /* Badge colors for future use */
+    --badge-yellow: 45 90% 75%;
+    --badge-pink: 310 45% 82%;
+    --badge-blue: 200 60% 75%;
+    --badge-green: 140 50% 75%;
 
-    /* Shadows */
-    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
+    /* Shadows - subtle lift */
+    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lift: 0 6px 16px rgba(0, 0, 0, 0.1);
 
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -110,5 +113,20 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+@layer utilities {
+  .border-thick {
+    border-width: 3px;
+  }
+  
+  .border-extra-thick {
+    border-width: 4px;
   }
 }

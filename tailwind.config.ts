@@ -55,6 +55,16 @@ export default {
           DEFAULT: "hsl(var(--expense))",
           foreground: "hsl(var(--expense-foreground))",
         },
+        badge: {
+          yellow: "hsl(var(--badge-yellow))",
+          pink: "hsl(var(--badge-pink))",
+          blue: "hsl(var(--badge-blue))",
+          green: "hsl(var(--badge-green))",
+        },
+      },
+      borderWidth: {
+        '3': '3px',
+        '4': '4px',
       },
       borderRadius: {
         lg: "var(--radius)",
