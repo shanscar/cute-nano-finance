@@ -4,7 +4,6 @@ import eyesIcon from "@/assets/eyes.svg";
 import sparkleIcon from "@/assets/sparkle.svg";
 import underlineIcon from "@/assets/underline.svg";
 import connectorSvg from "@/assets/connector.svg";
-import coinDecorationSvg from "@/assets/coin-decoration.svg";
 
 const Index = () => {
   return (
@@ -80,13 +79,6 @@ const Index = () => {
             <Button
               className="group w-[220px] md:w-[280px] h-32 text-lg font-bold rounded-3xl border-4 border-border bg-income hover:bg-income text-income-foreground shadow-[0_4px_20px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.16),0_4px_12px_rgba(0,0,0,0.12)] hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 ease-out relative z-10 dotted-pattern"
             >
-              {/* Decorative coin accent */}
-              <img 
-                src={coinDecorationSvg}
-                alt=""
-                aria-hidden="true"
-                className="absolute -top-4 -right-4 w-20 h-20 -rotate-12 opacity-90 pointer-events-none z-20 transition-transform duration-300 group-hover:rotate-[-18deg] group-hover:scale-110"
-              />
               <span className="relative z-10 flex items-center gap-4">
                 <span className="flex items-center justify-center w-12 h-12 rounded-xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3">
                   <PiggyBank className="h-6 w-6" />
