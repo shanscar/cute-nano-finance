@@ -42,7 +42,7 @@ const Index = () => {
                 alt="Sparkle" 
                 className="w-5 h-5" 
               />
-              <p className="text-base md:text-lg font-black tracking-wide font-heading uppercase">
+              <p className="text-sm md:text-lg font-black tracking-wide font-heading uppercase whitespace-nowrap">
                 Track your finances with ease
               </p>
             </div>
