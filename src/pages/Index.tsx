@@ -91,11 +91,12 @@ const Index = () => {
           <img
             src={connectorSvg}
             alt=""
-            className="absolute w-20 h-auto pointer-events-none z-15 hidden md:block"
+            className="absolute w-20 h-auto pointer-events-none hidden md:block"
             style={{
               top: '52px',
               left: '56%',
               transform: 'translateX(-50%)',
+              zIndex: 15,
             }}
           />
 
@@ -123,11 +124,12 @@ const Index = () => {
           <img
             src={connectorSvg}
             alt=""
-            className="absolute w-20 h-auto pointer-events-none z-15 hidden md:block"
+            className="absolute w-20 h-auto pointer-events-none hidden md:block"
             style={{
               bottom: '45px',
               left: '44%',
               transform: 'translateX(-50%) scaleX(-1)',
+              zIndex: 15,
             }}
           />
 
