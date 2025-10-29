@@ -98,7 +98,7 @@ const Index = () => {
 
             {/* Income Stat */}
             <div 
-              className="w-[160px] md:w-[180px] h-24 text-center p-5 rounded-2xl border-4 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all duration-300 relative z-20 overflow-hidden"
+              className="w-[160px] md:w-[180px] h-24 text-center p-5 rounded-2xl border-4 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all duration-300 relative z-0 overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-income"></div>
               <p className="text-xs font-bold text-foreground/70 mb-2 uppercase tracking-wide">This Month</p>
@@ -110,7 +110,7 @@ const Index = () => {
           <div className="col-span-12 flex items-center justify-center gap-6">
             {/* Expense Stat */}
             <div 
-              className="w-[160px] md:w-[180px] h-24 text-center p-5 rounded-2xl border-4 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all duration-300 relative z-20 overflow-hidden"
+              className="w-[160px] md:w-[180px] h-24 text-center p-5 rounded-2xl border-4 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all duration-300 relative z-0 overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-expense"></div>
               <p className="text-xs font-bold text-foreground/70 mb-2 uppercase tracking-wide">This Month</p>
