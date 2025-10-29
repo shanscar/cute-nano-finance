@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { Menu, User, PiggyBank, CreditCard } from "lucide-react";
+import { Menu, User, CreditCard } from "lucide-react";
 import eyesIcon from "@/assets/eyes.svg";
 import sparkleIcon from "@/assets/sparkle.svg";
 import underlineIcon from "@/assets/underline.svg";
 import connectorSvg from "@/assets/connector.svg";
+import piggybankImg from "@/assets/piggybank.png";
 
 const Index = () => {
   return (
@@ -81,7 +82,11 @@ const Index = () => {
             >
               <span className="relative z-10 flex items-center gap-4">
                 <span className="flex items-center justify-center w-12 h-12 rounded-xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3">
-                  <PiggyBank className="h-6 w-6" />
+                  <img 
+                    src={piggybankImg} 
+                    alt="Piggy bank" 
+                    className="h-12 w-12 object-contain"
+                  />
                 </span>
                 <span className="text-xl font-black tracking-wide">Earn</span>
               </span>
