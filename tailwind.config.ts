@@ -98,23 +98,11 @@ export default {
             animationTimingFunction: "ease-in-out",
           },
         },
-        "cloud-drift": {
-          "0%": { 
-            transform: "translateX(0%) translateY(0%)" 
-          },
-          "50%": { 
-            transform: "translateX(-3%) translateY(2%)" 
-          },
-          "100%": { 
-            transform: "translateX(0%) translateY(0%)" 
-          },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "subtle-bounce": "subtle-bounce 2s ease-in-out infinite",
-        "cloud-drift": "cloud-drift 20s ease-in-out infinite",
       },
     },
   },
