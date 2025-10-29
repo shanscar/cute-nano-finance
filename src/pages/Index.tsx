@@ -44,6 +44,33 @@ const Index = () => {
 
         {/* Bento Grid - Action Buttons & Stats */}
         <div className="w-full max-w-2xl grid grid-cols-12 gap-4 relative">
+          {/* SVG Connector Lines - Behind buttons and stats */}
+          <svg
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            style={{ zIndex: 5 }}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* Income Connector - Earn button to +$0 stat */}
+            <path
+              d="M 390 66 Q 440 45, 485 62"
+              stroke="hsl(195, 100%, 58%)"
+              strokeWidth="3"
+              fill="none"
+              strokeLinecap="round"
+              className="transition-all duration-300"
+            />
+            
+            {/* Expense Connector - Spend button to -$0 stat */}
+            <path
+              d="M 255 198 Q 220 180, 190 195"
+              stroke="hsl(315, 100%, 82%)"
+              strokeWidth="3"
+              fill="none"
+              strokeLinecap="round"
+              className="transition-all duration-300"
+            />
+          </svg>
+
           {/* Add Income Button - Large, Top Left */}
           <Button
             className="col-span-7 h-32 text-lg font-bold rounded-3xl border-4 border-border bg-income text-income-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_rgba(0,0,0,1)] hover:-translate-y-2 hover:-translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern"
