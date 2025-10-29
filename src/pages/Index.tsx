@@ -6,16 +6,29 @@ import underlineIcon from "@/assets/underline.svg";
 import connectorSvg from "@/assets/connector.svg";
 import piggybankCartoon from "@/assets/piggybank-cartoon.svg";
 import receiptSvg from "@/assets/receipt.svg";
+import gridSvg from "@/assets/grid.svg";
 
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col" style={{ background: 'linear-gradient(135deg, hsl(48, 95%, 90%) 0%, hsl(48, 90%, 94%) 25%, hsl(210, 20%, 98%) 60%, hsl(210, 20%, 98%) 100%)' }}>
       {/* Header with Profile and Menu */}
-      <header className="flex items-center justify-between p-5 border-b-3 border-border">
+      <header className="relative flex items-center justify-between p-5 border-b-3 border-border overflow-hidden">
+        {/* Grid background layer */}
+        <div className="absolute inset-0 opacity-15 pointer-events-none">
+          <img 
+            src={gridSvg} 
+            alt="" 
+            className="w-full h-full object-cover scale-150"
+            style={{ mixBlendMode: 'multiply' }}
+            aria-hidden="true"
+          />
+        </div>
+        
+        {/* Existing buttons with z-10 to stay above grid */}
         <Button
           variant="ghost"
           size="icon"
-          className="h-14 w-14 rounded-xl border-4 border-black bg-badge-yellow/50 hover:bg-badge-yellow/70 shadow-[3px_3px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_rgba(0,0,0,1)] hover:scale-110 hover:-rotate-3 rotate-[-1deg] transition-all duration-200"
+          className="relative z-10 h-14 w-14 rounded-xl border-4 border-black bg-badge-yellow/50 hover:bg-badge-yellow/70 shadow-[3px_3px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_rgba(0,0,0,1)] hover:scale-110 hover:-rotate-3 rotate-[-1deg] transition-all duration-200"
         >
           <Menu className="h-8 w-8" strokeWidth={3.5} />
         </Button>
@@ -23,7 +36,7 @@ const Index = () => {
         <Button
           variant="ghost"
           size="icon"
-          className="h-14 w-14 rounded-xl border-4 border-black bg-badge-pink/50 hover:bg-badge-pink/70 shadow-[3px_3px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_rgba(0,0,0,1)] hover:scale-110 hover:rotate-3 rotate-1 transition-all duration-200"
+          className="relative z-10 h-14 w-14 rounded-xl border-4 border-black bg-badge-pink/50 hover:bg-badge-pink/70 shadow-[3px_3px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_rgba(0,0,0,1)] hover:scale-110 hover:rotate-3 rotate-1 transition-all duration-200"
         >
           <User className="h-8 w-8" strokeWidth={3.5} />
         </Button>
