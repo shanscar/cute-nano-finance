@@ -46,7 +46,7 @@ const Index = () => {
         <div className="w-full max-w-2xl grid grid-cols-12 gap-4 relative">
           {/* Add Income Button - Large, Top Left */}
           <Button
-            className="col-span-7 h-32 text-lg font-bold rounded-3xl border-4 border-border bg-income text-income-foreground shadow-[8px_8px_0_hsl(195,100%,58%)] hover:shadow-[12px_12px_0_hsl(195,100%,58%)] hover:-translate-y-2 hover:-translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern"
+            className="col-span-7 h-32 text-lg font-bold rounded-3xl border-4 border-border bg-income text-income-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_rgba(0,0,0,1)] hover:-translate-y-2 hover:-translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern"
             style={{ transform: 'rotate(-0.5deg)' }}
           >
             <span className="relative z-10 flex items-center gap-4">
@@ -77,7 +77,7 @@ const Index = () => {
 
           {/* Add Expense Button - Large, Bottom Right */}
           <Button
-            className="col-span-7 h-32 text-lg font-bold rounded-3xl border-4 border-border bg-expense text-expense-foreground shadow-[8px_8px_0_hsl(315,100%,82%)] hover:shadow-[12px_12px_0_hsl(315,100%,82%)] hover:-translate-y-2 hover:-translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern-light"
+            className="col-span-7 h-32 text-lg font-bold rounded-3xl border-4 border-border bg-expense text-expense-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_rgba(0,0,0,1)] hover:-translate-y-2 hover:-translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern"
             style={{ transform: 'translate(-8px, -12px)' }}
           >
             <span className="relative z-10 flex items-center gap-4">
