@@ -38,10 +38,11 @@ All colors MUST be HSL.
 
     --radius: 1.5rem;
 
-    /* Soft pastel accent colors - brutalist style */
-    --income: 195 55% 78%;
+    /* Vibrant blue and pink - brutalist style */
+    --income: 195 100% 58%;
     --income-foreground: 0 0% 0%;
-    --expense: 345 65% 82%;
+    --income-light: 200 100% 93%;
+    --expense: 315 100% 82%;
     --expense-foreground: 0 0% 0%;
 
     /* Badge colors for future use */
