@@ -32,12 +32,41 @@ const Index = () => {
 
       {/* Main Content */}
       <main className="flex-1 flex flex-col items-center justify-center px-8 py-16 relative">
-        {/* Animated wavy line decoration */}
+        {/* Animated wavy line decoration - Layered Parallax */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+          {/* Back layer - slowest, most distant */}
           <img 
             src={wavyLineSvg} 
             alt="" 
-            className="absolute top-0 left-0 h-64 w-auto opacity-20 animate-drift-bounce"
+            className="absolute top-32 left-0 h-96 w-auto opacity-10 animate-drift-bounce-slow"
+            style={{ 
+              transform: 'perspective(1200px) translateZ(-100px) scale(0.85)',
+              filter: 'blur(1px) drop-shadow(12px 12px 8px rgba(0,0,0,0.15))'
+            }}
+            aria-hidden="true"
+          />
+          
+          {/* Middle layer - medium speed */}
+          <img 
+            src={wavyLineSvg} 
+            alt="" 
+            className="absolute top-16 left-0 h-72 w-auto opacity-15 animate-drift-bounce"
+            style={{ 
+              transform: 'perspective(1200px) translateZ(0px) scale(0.95)',
+              filter: 'drop-shadow(8px 8px 6px rgba(0,0,0,0.2))'
+            }}
+            aria-hidden="true"
+          />
+          
+          {/* Front layer - fastest, closest */}
+          <img 
+            src={wavyLineSvg} 
+            alt="" 
+            className="absolute top-0 left-0 h-64 w-auto opacity-20 animate-drift-bounce-fast"
+            style={{ 
+              transform: 'perspective(1200px) translateZ(50px) scale(1.05)',
+              filter: 'drop-shadow(4px 4px 4px rgba(0,0,0,0.25))'
+            }}
             aria-hidden="true"
           />
         </div>

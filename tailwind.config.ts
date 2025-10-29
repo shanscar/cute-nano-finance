@@ -130,6 +130,8 @@ export default {
         "subtle-bounce": "subtle-bounce 2s ease-in-out infinite",
         "drift-right": "drift-right 25s linear infinite",
         "drift-bounce": "drift-bounce 20s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite",
+        "drift-bounce-slow": "drift-bounce 28s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite",
+        "drift-bounce-fast": "drift-bounce 14s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite",
       },
     },
   },
