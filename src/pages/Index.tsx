@@ -92,7 +92,7 @@ const Index = () => {
             <img 
               src={connectorSvg} 
               alt="" 
-              className="w-10 md:w-12 h-auto flex-shrink-0 -ml-6 md:-ml-7 -mr-8 md:-mr-9 z-[100] pointer-events-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)]"
+              className="w-10 md:w-12 h-auto flex-shrink-0 -ml-6 md:-ml-7 -mr-8 md:-mr-9 relative z-[100] pointer-events-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)]"
               aria-hidden="true"
             />
 
@@ -121,7 +121,7 @@ const Index = () => {
             <img 
               src={connectorSvg} 
               alt="" 
-              className="w-10 md:w-12 h-auto flex-shrink-0 -ml-8 md:-ml-9 -mr-6 md:-mr-7 z-[100] pointer-events-none transform scale-x-[-1] drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)]"
+              className="w-10 md:w-12 h-auto flex-shrink-0 -ml-8 md:-ml-9 -mr-6 md:-mr-7 relative z-[100] pointer-events-none transform scale-x-[-1] drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)]"
               aria-hidden="true"
             />
 
