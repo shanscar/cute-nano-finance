@@ -42,35 +42,47 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="w-full max-w-sm space-y-5">
-          {/* Add Income Button */}
+        {/* Bento Grid - Action Buttons & Stats */}
+        <div className="w-full max-w-2xl grid grid-cols-12 gap-4 relative">
+          {/* Add Income Button - Large, Top Left */}
           <Button
-            className="w-full h-20 text-lg font-bold rounded-3xl border-3 border-border bg-income text-income-foreground hover:shadow-[0_6px_16px_rgba(0,0,0,0.1)] hover:-translate-y-0.5 transition-all duration-300"
+            className="col-span-7 h-32 text-lg font-bold rounded-3xl border-4 border-border bg-income text-income-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[10px_10px_0_rgba(0,0,0,1)] hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 relative z-10 dotted-pattern"
+            style={{ transform: 'rotate(-0.5deg)' }}
           >
-            <TrendingUp className="mr-3 h-7 w-7" />
-            Add Income
+            <span className="relative z-10 flex items-center">
+              <TrendingUp className="mr-3 h-7 w-7" />
+              Add Income
+            </span>
           </Button>
 
-          {/* Add Expense Button */}
-          <Button
-            className="w-full h-20 text-lg font-bold rounded-3xl border-3 border-border bg-expense text-expense-foreground hover:shadow-[0_6px_16px_rgba(0,0,0,0.1)] hover:-translate-y-0.5 transition-all duration-300"
+          {/* Income Stat - Top Right, Overlapping */}
+          <div 
+            className="col-span-5 h-24 text-center p-5 rounded-2xl border-3 border-border bg-income/40 shadow-[4px_4px_0_rgba(0,0,0,1)] hover:shadow-[6px_6px_0_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-300 relative z-20"
+            style={{ transform: 'translate(-12px, 20px)' }}
           >
-            <TrendingDown className="mr-3 h-7 w-7" />
-            Add Expense
-          </Button>
-        </div>
-
-        {/* Quick Stats */}
-        <div className="grid grid-cols-2 gap-5 w-full max-w-sm mt-16">
-          <div className="text-center p-5 rounded-2xl border-3 border-border bg-income/40 shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
             <p className="text-xs font-bold text-foreground/70 mb-2 uppercase tracking-wide">This Month</p>
             <p className="text-2xl font-black text-foreground">+$0</p>
           </div>
-          <div className="text-center p-5 rounded-2xl border-3 border-border bg-expense/40 shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
+
+          {/* Expense Stat - Bottom Left, Overlapping */}
+          <div 
+            className="col-span-5 h-24 text-center p-5 rounded-2xl border-3 border-border bg-expense/40 shadow-[4px_4px_0_rgba(0,0,0,1)] hover:shadow-[6px_6px_0_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-300 relative z-20"
+            style={{ transform: 'translate(12px, -8px) rotate(1deg)' }}
+          >
             <p className="text-xs font-bold text-foreground/70 mb-2 uppercase tracking-wide">This Month</p>
             <p className="text-2xl font-black text-foreground">-$0</p>
           </div>
+
+          {/* Add Expense Button - Large, Bottom Right */}
+          <Button
+            className="col-span-7 h-32 text-lg font-bold rounded-3xl border-4 border-border bg-expense text-expense-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[10px_10px_0_rgba(0,0,0,1)] hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 relative z-10 dotted-pattern"
+            style={{ transform: 'translate(-8px, -12px)' }}
+          >
+            <span className="relative z-10 flex items-center">
+              <TrendingDown className="mr-3 h-7 w-7" />
+              Add Expense
+            </span>
+          </Button>
         </div>
       </main>
     </div>
