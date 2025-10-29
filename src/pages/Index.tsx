@@ -37,7 +37,7 @@ const Index = () => {
           <img 
             src={wavyLineSvg} 
             alt="" 
-            className="absolute top-1/4 left-0 h-64 w-auto opacity-20 animate-drift-right"
+            className="absolute top-0 left-0 h-64 w-auto opacity-20 animate-drift-right"
             aria-hidden="true"
           />
         </div>
