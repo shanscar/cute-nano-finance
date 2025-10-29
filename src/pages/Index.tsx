@@ -6,6 +6,7 @@ import underlineIcon from "@/assets/underline.svg";
 import connectorSvg from "@/assets/connector.svg";
 import piggybankCartoon from "@/assets/piggybank-cartoon.svg";
 import receiptSvg from "@/assets/receipt.svg";
+import wavyLineSvg from "@/assets/wavy-line.svg";
 
 const Index = () => {
   return (
@@ -30,7 +31,19 @@ const Index = () => {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col items-center justify-center px-8 py-16">
+      <main className="flex-1 flex flex-col items-center justify-center px-8 py-16 relative">
+        {/* Animated wavy line decoration */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+          <img 
+            src={wavyLineSvg} 
+            alt="" 
+            className="absolute top-1/4 left-0 h-48 w-auto opacity-10 animate-drift-right"
+            aria-hidden="true"
+          />
+        </div>
+        
+        {/* Content wrapper with z-index */}
+        <div className="relative z-10 w-full flex flex-col items-center">
         {/* App Title */}
         <div className="mb-16 flex flex-col items-end">
           {/* Tagline Badge - NOW ON TOP */}
@@ -137,6 +150,7 @@ const Index = () => {
               </span>
             </Button>
           </div>
+        </div>
         </div>
       </main>
     </div>
