@@ -126,7 +126,7 @@ const Index = () => {
             />
 
             <Button
-              className="w-[220px] md:w-[280px] h-32 text-lg font-bold rounded-3xl border-4 border-border bg-expense text-expense-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_rgba(0,0,0,1)] hover:-translate-y-2 hover:-translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern"
+              className="w-[220px] md:w-[280px] h-32 text-lg font-bold rounded-3xl border-4 border-border bg-expense text-expense-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_rgba(0,0,0,1)] hover:translate-y-2 hover:translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern"
             >
               <span className="relative z-10 flex items-center gap-4">
                 <span className="flex items-center justify-center w-12 h-12 rounded-xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)]">
