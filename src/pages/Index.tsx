@@ -3,6 +3,7 @@ import { Menu, User, PiggyBank, CreditCard } from "lucide-react";
 import eyesIcon from "@/assets/eyes.svg";
 import sparkleIcon from "@/assets/sparkle.svg";
 import underlineIcon from "@/assets/underline.svg";
+import connectorSvg from "@/assets/connector.svg";
 
 const Index = () => {
   return (
@@ -86,10 +87,22 @@ const Index = () => {
             </span>
           </Button>
 
+          {/* Earn → Income Connector */}
+          <img
+            src={connectorSvg}
+            alt=""
+            className="absolute w-20 h-auto pointer-events-none z-15 hidden md:block"
+            style={{
+              top: '52px',
+              left: '56%',
+              transform: 'translateX(-50%)',
+            }}
+          />
+
           {/* Income Stat - Top Right, Overlapping */}
           <div 
             className="col-span-5 h-24 text-center p-5 rounded-2xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-all duration-300 relative z-20 overflow-hidden"
-            style={{ transform: 'translate(-12px, 20px)' }}
+            style={{ transform: 'translate(16px, 20px)' }}
           >
             <div className="absolute top-0 left-0 w-1 h-full bg-income"></div>
             <p className="text-xs font-bold text-foreground/70 mb-2 uppercase tracking-wide">This Month</p>
@@ -106,10 +119,22 @@ const Index = () => {
             <p className="text-2xl font-black text-foreground">-$0</p>
           </div>
 
+          {/* Expense → Spend Connector */}
+          <img
+            src={connectorSvg}
+            alt=""
+            className="absolute w-20 h-auto pointer-events-none z-15 hidden md:block"
+            style={{
+              bottom: '45px',
+              left: '44%',
+              transform: 'translateX(-50%) scaleX(-1)',
+            }}
+          />
+
           {/* Add Expense Button - Large, Bottom Right */}
           <Button
             className="col-span-7 h-32 text-lg font-bold rounded-3xl border-4 border-border bg-expense text-expense-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_rgba(0,0,0,1)] hover:-translate-y-2 hover:-translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern"
-            style={{ transform: 'translate(-8px, -12px)' }}
+            style={{ transform: 'translate(8px, -12px)' }}
           >
             <span className="relative z-10 flex items-center gap-4">
               <span className="flex items-center justify-center w-12 h-12 rounded-xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)]">
