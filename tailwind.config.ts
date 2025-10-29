@@ -98,40 +98,11 @@ export default {
             animationTimingFunction: "ease-in-out",
           },
         },
-        "drift-right": {
-          "0%": {
-            transform: "translateX(-100%)",
-          },
-          "100%": {
-            transform: "translateX(100vw)",
-          },
-        },
-        "drift-bounce": {
-          "0%": {
-            transform: "translateX(-100%) translateY(0) rotate(0deg)",
-          },
-          "25%": {
-            transform: "translateX(-25%) translateY(-20px) rotate(3deg)",
-          },
-          "50%": {
-            transform: "translateX(50%) translateY(0) rotate(-2deg)",
-          },
-          "75%": {
-            transform: "translateX(125%) translateY(-15px) rotate(2deg)",
-          },
-          "100%": {
-            transform: "translateX(200%) translateY(0) rotate(0deg)",
-          },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "subtle-bounce": "subtle-bounce 2s ease-in-out infinite",
-        "drift-right": "drift-right 25s linear infinite",
-        "drift-bounce": "drift-bounce 20s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite",
-        "drift-bounce-slow": "drift-bounce 28s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite",
-        "drift-bounce-fast": "drift-bounce 14s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite",
       },
     },
   },
