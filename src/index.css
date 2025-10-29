@@ -49,7 +49,7 @@ All colors MUST be HSL.
     --badge-yellow: 48 90% 70%;
     --badge-pink: 300 50% 85%;
     --badge-blue: 200 60% 75%;
-    --badge-green: 140 50% 75%;
+    --badge-green: 200 100% 93%;
 
     /* Gradient background */
     --gradient-bg: linear-gradient(135deg, hsl(48, 95%, 90%) 0%, hsl(48, 90%, 94%) 25%, hsl(210, 20%, 98%) 60%, hsl(210, 20%, 98%) 100%);
