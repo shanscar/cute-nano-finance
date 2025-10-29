@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Menu, User, PiggyBank, CreditCard } from "lucide-react";
 import eyesIcon from "@/assets/eyes.svg";
+import sparkleIcon from "@/assets/sparkle.svg";
+import underlineIcon from "@/assets/underline.svg";
 
 const Index = () => {
   return (
@@ -28,10 +30,31 @@ const Index = () => {
       <main className="flex-1 flex flex-col items-center justify-center px-8 py-16">
         {/* App Title */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-black tracking-tight mb-3 leading-tight">
+          <h1 className="text-5xl md:text-6xl font-black tracking-tight mb-6 leading-tight">
             Money Flow
           </h1>
-          <p className="text-muted-foreground text-base font-medium">Track your finances with ease</p>
+          
+          {/* Tagline with Handwritten Underline */}
+          <div className="inline-block relative">
+            <div className="flex items-center gap-2 justify-center mb-1">
+              <img 
+                src={sparkleIcon} 
+                alt="Sparkle" 
+                className="w-5 h-5" 
+              />
+              <p className="text-base md:text-lg font-black tracking-wide font-heading uppercase">
+                Track your finances with ease
+              </p>
+            </div>
+            
+            {/* Handwritten Underline SVG */}
+            <img 
+              src={underlineIcon} 
+              alt="" 
+              className="absolute left-1/2 -translate-x-1/2 w-full max-w-[105%] h-auto -bottom-1"
+              aria-hidden="true"
+            />
+          </div>
         </div>
 
         {/* Balance Display */}
