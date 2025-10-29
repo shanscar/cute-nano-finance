@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Menu, User, TrendingDown, TrendingUp } from "lucide-react";
+import { Menu, User, PiggyBank, CreditCard } from "lucide-react";
 
 const Index = () => {
   return (
@@ -49,9 +49,11 @@ const Index = () => {
             className="col-span-7 h-32 text-lg font-bold rounded-3xl border-4 border-border bg-income text-income-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[10px_10px_0_rgba(0,0,0,1)] hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 relative z-10 dotted-pattern"
             style={{ transform: 'rotate(-0.5deg)' }}
           >
-            <span className="relative z-10 flex items-center">
-              <TrendingUp className="mr-3 h-7 w-7" />
-              Add Income
+            <span className="relative z-10 flex items-center gap-4">
+              <span className="flex items-center justify-center w-12 h-12 rounded-xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)]">
+                <PiggyBank className="h-6 w-6" />
+              </span>
+              <span className="text-xl font-black tracking-wide">Earn</span>
             </span>
           </Button>
 
@@ -78,9 +80,11 @@ const Index = () => {
             className="col-span-7 h-32 text-lg font-bold rounded-3xl border-4 border-border bg-expense text-expense-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[10px_10px_0_rgba(0,0,0,1)] hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 relative z-10 dotted-pattern"
             style={{ transform: 'translate(-8px, -12px)' }}
           >
-            <span className="relative z-10 flex items-center">
-              <TrendingDown className="mr-3 h-7 w-7" />
-              Add Expense
+            <span className="relative z-10 flex items-center gap-4">
+              <span className="flex items-center justify-center w-12 h-12 rounded-xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)]">
+                <CreditCard className="h-6 w-6" />
+              </span>
+              <span className="text-xl font-black tracking-wide">Spend</span>
             </span>
           </Button>
         </div>
