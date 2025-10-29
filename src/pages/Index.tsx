@@ -27,11 +27,11 @@ const Index = () => {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col items-center justify-center px-8 py-8 md:py-16">
+      <main className="flex-1 flex flex-col items-center justify-center px-8 py-16">
         {/* App Title */}
-        <div className="text-center mb-8 md:mb-16">
+        <div className="text-center mb-16">
           {/* Tagline Badge - NOW ON TOP */}
-          <div className="inline-block mb-2 md:mb-4">
+          <div className="inline-block mb-4">
             <div 
               className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#5AFDA5]/25 border-3 border-border relative"
               style={{ transform: 'rotate(-1deg)' }}
@@ -52,14 +52,14 @@ const Index = () => {
           </div>
           
           {/* Main Title */}
-          <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">
+          <h1 className="text-5xl md:text-6xl font-black tracking-tight leading-tight">
             Money Flow
           </h1>
         </div>
 
         {/* Balance Display */}
-        <div className="w-full max-w-sm mb-10 md:mb-20">
-          <div className="text-center p-5 md:p-8 rounded-3xl border-3 border-border bg-card shadow-[0_2px_8px_rgba(0,0,0,0.06)] relative overflow-hidden">
+        <div className="w-full max-w-sm mb-20">
+          <div className="text-center p-8 rounded-3xl border-3 border-border bg-card shadow-[0_2px_8px_rgba(0,0,0,0.06)] relative overflow-hidden">
             <div className="absolute top-0 left-0 w-3 h-full bg-badge-yellow"></div>
             <img 
               src={eyesIcon} 
@@ -67,7 +67,7 @@ const Index = () => {
               className="absolute top-3 right-3 w-10 h-10 transition-transform duration-300 hover:scale-110 hover:rotate-3" 
             />
             <p className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wide">Current Balance</p>
-            <h2 className="text-5xl md:text-6xl font-black tracking-tight">$0.00</h2>
+            <h2 className="text-6xl font-black tracking-tight">$0.00</h2>
           </div>
         </div>
 
