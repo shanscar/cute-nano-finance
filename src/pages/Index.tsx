@@ -82,7 +82,7 @@ const Index = () => {
             >
               <span className="relative z-10 flex items-center gap-4">
                 <span className="flex items-center justify-center w-12 h-12 rounded-xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3">
-                  <img src={piggybankCartoon} alt="Piggy Bank" className="h-8 w-8" />
+                  <img src={piggybankCartoon} alt="Piggy Bank" className="h-14 w-14" />
                 </span>
                 <span className="text-xl font-black tracking-wide">Earn</span>
               </span>
