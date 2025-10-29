@@ -88,10 +88,21 @@ export default {
             height: "0",
           },
         },
+        "subtle-bounce": {
+          "0%, 100%": {
+            transform: "translateY(0)",
+            animationTimingFunction: "ease-in-out",
+          },
+          "50%": {
+            transform: "translateY(-5%)",
+            animationTimingFunction: "ease-in-out",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "subtle-bounce": "subtle-bounce 2s ease-in-out infinite",
       },
     },
   },
