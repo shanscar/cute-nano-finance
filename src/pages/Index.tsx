@@ -6,6 +6,7 @@ import underlineIcon from "@/assets/underline.svg";
 import connectorSvg from "@/assets/connector.svg";
 import piggybankCartoon from "@/assets/piggybank-cartoon.svg";
 import receiptSvg from "@/assets/receipt.svg";
+import skyBgSvg from "@/assets/sky_bg.svg";
 
 const Index = () => {
   return (
@@ -63,14 +64,27 @@ const Index = () => {
         {/* Balance Display */}
         <div className="w-full max-w-sm mb-20">
           <div className="text-center p-8 rounded-3xl border-3 border-border bg-card shadow-[0_2px_8px_rgba(0,0,0,0.06)] relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-3 h-full bg-badge-yellow"></div>
+            {/* Animated sky background */}
+            <div className="absolute inset-0 opacity-20 animate-cloud-drift">
+              <img 
+                src={skyBgSvg} 
+                alt="" 
+                className="w-full h-full object-cover"
+                aria-hidden="true"
+              />
+            </div>
+            
+            {/* Content with z-index to stay above background */}
+            <div className="absolute top-0 left-0 w-3 h-full bg-badge-yellow z-10"></div>
             <img 
               src={eyesIcon} 
               alt="Watching eyes" 
-              className="absolute top-3 right-3 w-10 h-10 transition-transform duration-300 hover:scale-110 hover:rotate-3" 
+              className="absolute top-3 right-3 w-10 h-10 transition-transform duration-300 hover:scale-110 hover:rotate-3 z-10" 
             />
-            <p className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wide">Current Balance</p>
-            <h2 className="text-6xl font-black tracking-tight">$0.00</h2>
+            <div className="relative z-10">
+              <p className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wide">Current Balance</p>
+              <h2 className="text-6xl font-black tracking-tight">$0.00</h2>
+            </div>
           </div>
         </div>
 
