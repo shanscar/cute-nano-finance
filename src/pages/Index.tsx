@@ -92,7 +92,7 @@ const Index = () => {
             <img 
               src={connectorSvg} 
               alt="" 
-              className="w-10 md:w-12 h-auto flex-shrink-0 -mx-4"
+              className="w-10 md:w-12 h-auto flex-shrink-0 -ml-5 -mr-6"
               aria-hidden="true"
             />
 
@@ -122,7 +122,7 @@ const Index = () => {
             <img 
               src={connectorSvg} 
               alt="" 
-              className="w-10 md:w-12 h-auto flex-shrink-0 -mx-4 transform scale-x-[-1]"
+              className="w-10 md:w-12 h-auto flex-shrink-0 -ml-6 -mr-5 transform scale-x-[-1]"
               aria-hidden="true"
             />
 
