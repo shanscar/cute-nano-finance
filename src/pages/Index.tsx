@@ -29,11 +29,11 @@ const Index = () => {
       {/* Main Content */}
       <main className="flex-1 flex flex-col items-center justify-center px-8 py-16">
         {/* App Title */}
-        <div className="text-center mb-16">
+        <div className="mb-16 flex flex-col items-end">
           {/* Tagline Badge - NOW ON TOP */}
           <div className="inline-block mb-4">
             <div 
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#5AFDA5]/25 border-3 border-border relative"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#5AFDA5]/20 via-[#5AFDA5]/35 to-[#5AFDA5]/25 border-3 border-border relative"
               style={{ transform: 'rotate(-1deg)' }}
             >
               {/* Green decorative corner accent */}
@@ -52,7 +52,7 @@ const Index = () => {
           </div>
           
           {/* Main Title */}
-          <h1 className="text-5xl md:text-6xl font-black tracking-tight leading-tight">
+          <h1 className="text-5xl md:text-6xl font-black tracking-tight leading-tight w-full text-center">
             Money Flow
           </h1>
         </div>
