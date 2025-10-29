@@ -77,11 +77,11 @@ const Index = () => {
           {/* Top Row: Earn Button → Connector → Income Stat */}
           <div className="col-span-12 flex items-center justify-center gap-3 md:gap-6">
             <Button
-              className="w-[220px] md:w-[280px] h-32 text-lg font-bold rounded-3xl border-4 border-border bg-income text-income-foreground shadow-[-8px_8px_0_rgba(0,0,0,1)] hover:shadow-[-12px_12px_0_rgba(0,0,0,1)] hover:translate-y-2 hover:-translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern"
+              className="group w-[220px] md:w-[280px] h-32 text-lg font-bold rounded-3xl border-4 border-border bg-income text-income-foreground shadow-[0_4px_20px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.16),0_4px_12px_rgba(0,0,0,0.12)] hover:-translate-y-2 hover:scale-[1.02] hover:brightness-105 transition-all duration-300 ease-out relative z-10 dotted-pattern"
               style={{ transform: 'rotate(-0.5deg)' }}
             >
               <span className="relative z-10 flex items-center gap-4">
-                <span className="flex items-center justify-center w-12 h-12 rounded-xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)]">
+                <span className="flex items-center justify-center w-12 h-12 rounded-xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3">
                   <PiggyBank className="h-6 w-6" />
                 </span>
                 <span className="text-xl font-black tracking-wide">Earn</span>
@@ -126,10 +126,10 @@ const Index = () => {
             />
 
             <Button
-              className="w-[220px] md:w-[280px] h-32 text-lg font-bold rounded-3xl border-4 border-border bg-expense text-expense-foreground shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_rgba(0,0,0,1)] hover:translate-y-2 hover:translate-x-[2px] transition-all duration-300 relative z-10 dotted-pattern"
+              className="group w-[220px] md:w-[280px] h-32 text-lg font-bold rounded-3xl border-4 border-border bg-expense text-expense-foreground shadow-[0_4px_20px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.16),0_4px_12px_rgba(0,0,0,0.12)] hover:-translate-y-2 hover:scale-[1.02] hover:brightness-105 transition-all duration-300 ease-out relative z-10 dotted-pattern"
             >
               <span className="relative z-10 flex items-center gap-4">
-                <span className="flex items-center justify-center w-12 h-12 rounded-xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)]">
+                <span className="flex items-center justify-center w-12 h-12 rounded-xl border-3 border-border bg-card shadow-[2px_2px_0_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <CreditCard className="h-6 w-6" />
                 </span>
                 <span className="text-xl font-black tracking-wide">Spend</span>
