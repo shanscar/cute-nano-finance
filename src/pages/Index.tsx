@@ -15,17 +15,17 @@ const Index = () => {
         <Button
           variant="ghost"
           size="icon"
-          className="rounded-xl border-4 border-black bg-badge-yellow/50 hover:bg-badge-yellow/70 shadow-[3px_3px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_rgba(0,0,0,1)] hover:scale-110 hover:-rotate-3 rotate-[-1deg] transition-all duration-200"
+          className="h-14 w-14 rounded-xl border-4 border-black bg-badge-yellow/50 hover:bg-badge-yellow/70 shadow-[3px_3px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_rgba(0,0,0,1)] hover:scale-110 hover:-rotate-3 rotate-[-1deg] transition-all duration-200"
         >
-          <Menu className="h-5 w-5" strokeWidth={3} />
+          <Menu className="h-7 w-7" strokeWidth={3} />
         </Button>
         
         <Button
           variant="ghost"
           size="icon"
-          className="rounded-xl border-4 border-black bg-badge-pink/50 hover:bg-badge-pink/70 shadow-[3px_3px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_rgba(0,0,0,1)] hover:scale-110 hover:rotate-3 rotate-1 transition-all duration-200"
+          className="h-14 w-14 rounded-xl border-4 border-black bg-badge-pink/50 hover:bg-badge-pink/70 shadow-[3px_3px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_rgba(0,0,0,1)] hover:scale-110 hover:rotate-3 rotate-1 transition-all duration-200"
         >
-          <User className="h-5 w-5" strokeWidth={3} />
+          <User className="h-7 w-7" strokeWidth={3} />
         </Button>
       </header>
 
