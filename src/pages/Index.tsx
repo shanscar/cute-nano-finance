@@ -130,7 +130,7 @@ const Index = () => {
               className="group w-[220px] md:w-[280px] h-32 text-lg font-bold rounded-3xl border-4 border-border bg-expense hover:bg-expense text-expense-foreground shadow-[0_4px_20px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.16),0_4px_12px_rgba(0,0,0,0.12)] hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 ease-out relative z-10 dotted-pattern"
             >
               <span className="relative z-10 flex items-center gap-4">
-                <span className="flex items-center justify-center w-24 h-24 rounded-xl border-4 border-black bg-badge-green rotate-6 shadow-[6px_6px_0px_rgba(0,0,0,0.4)] transition-all duration-300 group-hover:scale-125 group-hover:-rotate-6 animate-[subtle-bounce]">
+                <span className="flex items-center justify-center w-24 h-24 rounded-xl border-4 border-black bg-badge-green rotate-12 shadow-[6px_6px_0px_rgba(0,0,0,0.4)] transition-all duration-300 group-hover:scale-125 group-hover:-rotate-12 animate-[subtle-bounce]">
                   <img src={receiptSvg} alt="Receipt" className="h-20 w-20 drop-shadow-2xl" />
                 </span>
                 <span className="text-xl font-black tracking-wide">Spend</span>
