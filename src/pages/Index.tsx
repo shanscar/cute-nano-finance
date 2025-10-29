@@ -30,31 +30,31 @@ const Index = () => {
       <main className="flex-1 flex flex-col items-center justify-center px-8 py-16">
         {/* App Title */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-black tracking-tight mb-6 leading-tight">
-            Money Flow
-          </h1>
-          
-          {/* Tagline with Handwritten Underline */}
-          <div className="inline-block relative">
-            <div className="flex items-center gap-2 justify-center mb-1">
+          {/* Tagline Badge - NOW ON TOP */}
+          <div className="inline-block mb-4">
+            <div 
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#5AFDA5]/25 border-3 border-border relative"
+              style={{ transform: 'rotate(-1deg)' }}
+            >
+              {/* Green decorative corner accent */}
+              <div className="absolute -top-1 -left-1 w-3 h-3 bg-[#5AFDA5] rounded-full border-2 border-border"></div>
+              <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-[#5AFDA5] rounded-full border-2 border-border"></div>
+              
               <img 
                 src={sparkleIcon} 
                 alt="Sparkle" 
                 className="w-5 h-5" 
               />
-              <p className="text-sm md:text-lg font-black tracking-wide font-heading uppercase whitespace-nowrap">
+              <p className="text-xs md:text-sm font-black tracking-wide font-heading uppercase whitespace-nowrap">
                 Track your finances with ease
               </p>
             </div>
-            
-            {/* Handwritten Underline SVG */}
-            <img 
-              src={underlineIcon} 
-              alt="" 
-              className="absolute left-1/2 -translate-x-1/2 w-full max-w-[105%] h-auto -bottom-1"
-              aria-hidden="true"
-            />
           </div>
+          
+          {/* Main Title */}
+          <h1 className="text-5xl md:text-6xl font-black tracking-tight leading-tight">
+            Money Flow
+          </h1>
         </div>
 
         {/* Balance Display */}
