@@ -38,9 +38,6 @@ const Index = () => {
             src={wavyLineSvg} 
             alt="" 
             className="absolute top-0 left-0 h-64 w-auto opacity-20 animate-drift-bounce"
-            style={{
-              filter: 'drop-shadow(4px 4px 0px rgba(0,0,0,0.4)) drop-shadow(8px 8px 0px rgba(0,0,0,0.3)) drop-shadow(12px 12px 0px rgba(0,0,0,0.2))'
-            }}
             aria-hidden="true"
           />
         </div>
