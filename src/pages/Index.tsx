@@ -7,7 +7,6 @@ import connectorSvg from "@/assets/connector.svg";
 import piggybankCartoon from "@/assets/piggybank-cartoon.svg";
 import receiptSvg from "@/assets/receipt.svg";
 import buttonArrowSvg from "@/assets/button_arrow.svg";
-import slashStrokesSvg from "@/assets/slash_strokes.svg";
 
 const Index = () => {
   return (
@@ -63,7 +62,7 @@ const Index = () => {
         </div>
 
         {/* Balance Display */}
-        <div className="w-full max-w-sm mb-20 relative">
+        <div className="w-full max-w-sm mb-20">
           <div className="text-center p-8 rounded-3xl border-3 border-border bg-card shadow-[0_2px_8px_rgba(0,0,0,0.06)] relative overflow-hidden">
             <div className="absolute top-0 left-0 w-3 h-full bg-badge-yellow"></div>
             <img 
@@ -74,12 +73,6 @@ const Index = () => {
             <p className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wide">Current Balance</p>
             <h2 className="text-6xl font-black tracking-tight">$0.00</h2>
           </div>
-          <img 
-            src={slashStrokesSvg} 
-            alt="" 
-            className="absolute -bottom-2 -right-2 w-24 h-24 opacity-70 [filter:invert(48%)_sepia(79%)_saturate(2476%)_hue-rotate(86deg)_brightness(118%)_contrast(119%)]"
-            aria-hidden="true"
-          />
         </div>
 
         {/* Bento Grid - Action Buttons & Stats */}
