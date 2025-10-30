@@ -77,7 +77,7 @@ const Index = () => {
           <img 
             src={slashStrokesSvg} 
             alt="" 
-            className="absolute -bottom-2 -right-2 w-24 h-24 opacity-50 brightness-0 saturate-100 invert hue-rotate-180"
+            className="absolute -bottom-2 -right-2 w-24 h-24 opacity-70 [filter:invert(48%)_sepia(79%)_saturate(2476%)_hue-rotate(86deg)_brightness(118%)_contrast(119%)]"
             aria-hidden="true"
           />
         </div>
