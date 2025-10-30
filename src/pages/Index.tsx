@@ -87,12 +87,12 @@ const Index = () => {
                   <img src={piggybankCartoon} alt="Piggy Bank" className="h-24 w-24 drop-shadow-2xl" />
                 </span>
                 <span className="flex flex-col items-center gap-1">
-                  <img 
-                    src={buttonArrowSvg} 
-                    alt="" 
-                    className="h-6 w-6 opacity-40 -rotate-90 transition-all duration-300 group-hover:opacity-60 group-hover:-translate-y-1"
-                    aria-hidden="true"
-                  />
+                <img 
+                  src={buttonArrowSvg} 
+                  alt="" 
+                  className="h-6 w-6 transition-all duration-300 group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
                   <span className="text-xl font-black tracking-wide">Earn</span>
                 </span>
               </span>
@@ -143,12 +143,12 @@ const Index = () => {
                   <img src={receiptSvg} alt="Receipt" className="h-20 w-20 drop-shadow-2xl" />
                 </span>
                 <span className="flex flex-col items-center gap-1">
-                  <img 
-                    src={buttonArrowSvg} 
-                    alt="" 
-                    className="h-6 w-6 opacity-40 -rotate-90 transition-all duration-300 group-hover:opacity-60 group-hover:-translate-y-1"
-                    aria-hidden="true"
-                  />
+                <img 
+                  src={buttonArrowSvg} 
+                  alt="" 
+                  className="h-6 w-6 transition-all duration-300 group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
                   <span className="text-xl font-black tracking-wide">Spend</span>
                 </span>
               </span>
