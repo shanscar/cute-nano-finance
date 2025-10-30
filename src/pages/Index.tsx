@@ -6,6 +6,7 @@ import underlineIcon from "@/assets/underline.svg";
 import connectorSvg from "@/assets/connector.svg";
 import piggybankCartoon from "@/assets/piggybank-cartoon.svg";
 import receiptSvg from "@/assets/receipt.svg";
+import buttonArrowSvg from "@/assets/button_arrow.svg";
 
 const Index = () => {
   return (
@@ -85,7 +86,15 @@ const Index = () => {
                 <span className="flex items-center justify-center w-24 h-24 rounded-xl border-4 border-black bg-badge-yellow rotate-6 shadow-[6px_6px_0px_rgba(0,0,0,0.4)] transition-all duration-300 group-hover:scale-125 group-hover:-rotate-6 animate-[subtle-bounce]">
                   <img src={piggybankCartoon} alt="Piggy Bank" className="h-24 w-24 drop-shadow-2xl" />
                 </span>
-                <span className="text-xl font-black tracking-wide">Earn</span>
+                <span className="flex flex-col items-center gap-1">
+                  <img 
+                    src={buttonArrowSvg} 
+                    alt="" 
+                    className="h-6 w-6 opacity-40 -rotate-90 transition-all duration-300 group-hover:opacity-60 group-hover:-translate-y-1"
+                    aria-hidden="true"
+                  />
+                  <span className="text-xl font-black tracking-wide">Earn</span>
+                </span>
               </span>
             </Button>
 
@@ -133,7 +142,15 @@ const Index = () => {
                 <span className="flex items-center justify-center w-24 h-24 rounded-xl border-4 border-black bg-badge-green rotate-6 shadow-[6px_6px_0px_rgba(0,0,0,0.4)] transition-all duration-300 group-hover:scale-125 group-hover:-rotate-6 animate-[subtle-bounce]">
                   <img src={receiptSvg} alt="Receipt" className="h-20 w-20 drop-shadow-2xl" />
                 </span>
-                <span className="text-xl font-black tracking-wide">Spend</span>
+                <span className="flex flex-col items-center gap-1">
+                  <img 
+                    src={buttonArrowSvg} 
+                    alt="" 
+                    className="h-6 w-6 opacity-40 -rotate-90 transition-all duration-300 group-hover:opacity-60 group-hover:-translate-y-1"
+                    aria-hidden="true"
+                  />
+                  <span className="text-xl font-black tracking-wide">Spend</span>
+                </span>
               </span>
             </Button>
           </div>
