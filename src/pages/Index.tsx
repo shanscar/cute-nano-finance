@@ -90,7 +90,7 @@ const Index = () => {
                 <img 
                   src={buttonArrowSvg} 
                   alt="" 
-                  className="h-6 w-6 transition-all duration-300 group-hover:translate-x-1"
+                  className="h-6 w-6 transition-all duration-300 group-hover:translate-x-1 self-end"
                   aria-hidden="true"
                 />
                   <span className="text-xl font-black tracking-wide">Earn</span>
@@ -146,7 +146,7 @@ const Index = () => {
                 <img 
                   src={buttonArrowSvg} 
                   alt="" 
-                  className="h-6 w-6 transition-all duration-300 group-hover:translate-x-1"
+                  className="h-6 w-6 transition-all duration-300 group-hover:translate-x-1 self-end"
                   aria-hidden="true"
                 />
                   <span className="text-xl font-black tracking-wide">Spend</span>
