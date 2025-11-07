@@ -1,10 +1,7 @@
-import { ACTION_BUTTONS, STATS_CONFIG } from "@/config/dashboard";
-import { DashboardLayout } from "@/components/layout/DashboardLayout";
-import { TaglineBadge } from "@/components/dashboard/TaglineBadge";
-import { BalanceCard } from "@/components/dashboard/BalanceCard";
-import { ActionRow } from "@/components/dashboard/ActionRow";
-import { useBalance } from "@/hooks/use-balance";
-import { APP_CONFIG } from "@/config/app";
+import { ACTION_BUTTONS, STATS_CONFIG, APP_CONFIG } from "@/config";
+import { DashboardLayout } from "@/components/layout";
+import { TaglineBadge, BalanceCard, ActionRow } from "@/components/dashboard";
+import { useBalance } from "@/hooks";
 
 const Index = () => {
   const { balance } = useBalance('0.00');

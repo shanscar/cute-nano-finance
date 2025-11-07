@@ -1,4 +1,4 @@
-import eyesIcon from "@/assets/eyes.svg";
+import { eyes } from "@/assets";
 
 interface BalanceCardProps {
   balance: string;
@@ -11,7 +11,7 @@ export const BalanceCard = ({ balance, currency = "$" }: BalanceCardProps) => {
       <div className="text-center p-8 rounded-3xl border-3 border-border bg-card shadow-[0_2px_8px_rgba(0,0,0,0.06)] relative overflow-hidden">
         <div className="absolute top-0 left-0 w-3 h-full bg-badge-yellow"></div>
         <img 
-          src={eyesIcon} 
+          src={eyes} 
           alt="Watching eyes" 
           className="absolute top-3 right-3 w-10 h-10 transition-transform duration-300 hover:scale-110 hover:rotate-3" 
         />

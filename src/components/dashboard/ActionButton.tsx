@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import buttonArrowSvg from "@/assets/button_arrow.svg";
-import { ActionButtonConfig } from "@/types/dashboard";
+import { buttonArrow } from "@/assets";
+import { ActionButtonConfig } from "@/types";
 import { cn } from "@/lib/utils";
 
 interface ActionButtonProps {
@@ -50,7 +50,7 @@ export const ActionButton = ({ config, showArrow = true, className }: ActionButt
         <span className="flex flex-col items-center gap-1">
           {showArrow && (
             <img 
-              src={buttonArrowSvg} 
+              src={buttonArrow} 
               alt="" 
               className="h-6 w-6 transition-all duration-300 group-hover:translate-x-1 self-end"
               aria-hidden="true"

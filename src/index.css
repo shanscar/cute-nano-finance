@@ -37,7 +37,6 @@ All colors MUST be HSL.
     /* Vibrant blue and pink - brutalist style */
     --income: 195 100% 58%;
     --income-foreground: 0 0% 0%;
-    --income-light: 200 100% 93%;
     --expense: 315 100% 82%;
     --expense-foreground: 0 0% 0%;
 
@@ -46,12 +45,6 @@ All colors MUST be HSL.
     --badge-pink: 300 50% 85%;
     --badge-blue: 200 60% 75%;
     --badge-green: 0 0% 100%;
-
-    /* Gradient background */
-    --gradient-bg: linear-gradient(135deg, hsl(48, 95%, 90%) 0%, hsl(48, 90%, 94%) 25%, hsl(210, 20%, 98%) 60%, hsl(210, 20%, 98%) 100%);
-
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
@@ -97,14 +90,6 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  .border-thick {
-    border-width: 3px;
-  }
-  
-  .border-extra-thick {
-    border-width: 4px;
-  }
-
   /* Dotted pattern overlay for bento grid elements */
   .dotted-pattern {
     @apply relative;
