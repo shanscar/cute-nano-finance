@@ -1,7 +1,7 @@
-import connectorSvg from "@/assets/connector.svg";
+import { connector } from "@/assets";
 import { ActionButton } from "./ActionButton";
 import { StatCard } from "./StatCard";
-import { ActionButtonConfig, StatCardConfig } from "@/types/dashboard";
+import { ActionButtonConfig, StatCardConfig } from "@/types";
 import { cn } from "@/lib/utils";
 
 interface ActionRowProps {
@@ -18,8 +18,8 @@ export const ActionRow = ({ buttonConfig, statConfig, reversed = false }: Action
           <StatCard config={statConfig} />
           
           <img 
-            src={connectorSvg} 
-            alt="" 
+            src={connector} 
+            alt=""
             className={cn(
               "w-10 h-auto flex-shrink-0 -ml-8 -mr-6",
               "relative z-[100] pointer-events-none",
@@ -36,8 +36,8 @@ export const ActionRow = ({ buttonConfig, statConfig, reversed = false }: Action
           <ActionButton config={buttonConfig} />
           
           <img 
-            src={connectorSvg} 
-            alt="" 
+            src={connector} 
+            alt=""
             className={cn(
               "w-10 h-auto flex-shrink-0 -ml-6 -mr-8",
               "relative z-[100] pointer-events-none",

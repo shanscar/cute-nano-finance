@@ -1,4 +1,4 @@
-import sparkleIcon from "@/assets/sparkle.svg";
+import { sparkle } from "@/assets";
 
 interface TaglineBadgeProps {
   text: string;
@@ -16,8 +16,8 @@ export const TaglineBadge = ({ text }: TaglineBadgeProps) => {
         <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-[#5AFDA5] rounded-full border-2 border-border"></div>
         
         <img 
-          src={sparkleIcon} 
-          alt="Sparkle" 
+          src={sparkle} 
+          alt="Sparkle"
           className="w-5 h-5" 
         />
         <p className="text-xs md:text-sm font-black tracking-wide font-heading uppercase whitespace-nowrap">

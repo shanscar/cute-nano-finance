@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 import { Menu, User } from "lucide-react";
 import { HeaderIconButton } from "@/components/dashboard/HeaderIconButton";
-import { GRADIENTS, BORDERS } from "@/constants/theme";
-import { HEADER_BUTTONS } from "@/constants/app";
+import { GRADIENTS, BORDERS } from "@/config/theme";
+import { HEADER_BUTTONS } from "@/config/app";
 
 interface DashboardLayoutProps {
   children: ReactNode;

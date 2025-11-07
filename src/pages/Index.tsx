@@ -4,7 +4,7 @@ import { TaglineBadge } from "@/components/dashboard/TaglineBadge";
 import { BalanceCard } from "@/components/dashboard/BalanceCard";
 import { ActionRow } from "@/components/dashboard/ActionRow";
 import { useBalance } from "@/hooks/use-balance";
-import { APP_CONFIG } from "@/constants/app";
+import { APP_CONFIG } from "@/config/app";
 
 const Index = () => {
   const { balance } = useBalance('0.00');

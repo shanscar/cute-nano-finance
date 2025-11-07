@@ -1,6 +1,5 @@
-import piggybankCartoon from "@/assets/piggybank-cartoon.svg";
-import receiptSvg from "@/assets/receipt.svg";
-import { ActionButtonConfig, StatCardConfig } from "@/types/dashboard";
+import { piggybankCartoon, receipt } from "@/assets";
+import { ActionButtonConfig, StatCardConfig } from "@/types";
 
 export const ACTION_BUTTONS: ActionButtonConfig[] = [
   {
@@ -17,7 +16,7 @@ export const ACTION_BUTTONS: ActionButtonConfig[] = [
   {
     id: 'spend',
     label: 'Spend',
-    icon: receiptSvg,
+    icon: receipt,
     iconAlt: 'Receipt',
     bgColor: 'bg-expense',
     textColor: 'text-expense-foreground',
