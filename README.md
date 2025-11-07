@@ -213,11 +213,7 @@ This project was built with [Lovable](https://lovable.dev). Changes can be made 
 2. **Direct Code Editing** - Clone repo and edit in your preferred IDE
 3. **GitHub Pull Requests** - Collaborate with team members
 
-All changes sync automatically between Lovable and your connected GitHub repository.
-
-## 📄 License
-
-This project is open source and available under the MIT License.
+All changes sync automatically between Lovable and GitHub repository.
 
 ---
 
