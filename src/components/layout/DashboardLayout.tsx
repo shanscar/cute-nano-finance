@@ -15,7 +15,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       style={{ background: GRADIENTS.main }}
     >
       {/* Header with Profile and Menu */}
-      <header className={`flex items-center justify-between p-5 ${BORDERS.standard} border-border`}>
+      <header className={`flex items-center justify-between px-8 py-5 border-b-3 border-border`}>
         <HeaderIconButton 
           icon={Menu} 
           bgColor={HEADER_BUTTONS.menu.bgColor}
