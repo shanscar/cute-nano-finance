@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
+import { useNavigate } from "react-router-dom";
 import { Menu, User } from "lucide-react";
 import { HeaderIconButton } from "@/components/dashboard/HeaderIconButton";
-import { GRADIENTS, BORDERS } from "@/config/theme";
+import { GRADIENTS } from "@/config/theme";
 import { HEADER_BUTTONS } from "@/config/app";
 
 interface DashboardLayoutProps {
@@ -9,6 +10,12 @@ interface DashboardLayoutProps {
 }
 
 export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
+  const navigate = useNavigate();
+
+  const handleUserClick = () => {
+    navigate('/onboarding');
+  };
+
   return (
     <div 
       className="min-h-screen flex flex-col" 
@@ -25,6 +32,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           icon={User} 
           bgColor={HEADER_BUTTONS.profile.bgColor}
           rotation={HEADER_BUTTONS.profile.rotation}
+          onClick={handleUserClick}
         />
       </header>
 
