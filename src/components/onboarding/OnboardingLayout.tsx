@@ -41,25 +41,16 @@ export const OnboardingLayout = ({
         <div className="max-w-lg mx-auto">
           <div className="flex items-center gap-4 mb-4">
             {showBackButton ? (
-              <button
-                type="button"
+              <HeaderIconButton
+                icon={ArrowLeft}
+                bgColor={HEADER_BUTTONS.back.bgColor}
+                rotation={HEADER_BUTTONS.back.rotation}
+                size="md"
                 onClick={currentStep === 1 ? handleClose : prevStep}
-                className={cn(
-                  "p-2 rounded-xl transition-all duration-200",
-                  "border-4 border-black",
-                  HEADER_BUTTONS.menu.bgColor,
-                  HEADER_BUTTONS.menu.rotation,
-                  SHADOWS.standard,
-                  "hover:scale-110",
-                  `hover:${SHADOWS.hover}`,
-                  "active:scale-95"
-                )}
-                aria-label={ONBOARDING_MESSAGES.backButton}
-              >
-                <ArrowLeft className="w-5 h-5 text-foreground" />
-              </button>
+                ariaLabel={ONBOARDING_MESSAGES.backButton}
+              />
             ) : (
-              <div className="w-11" />
+              <div className="w-12" />
             )}
             <div className="flex-1">
               <ProgressBar
@@ -70,9 +61,11 @@ export const OnboardingLayout = ({
             </div>
             <HeaderIconButton
               icon={X}
-              bgColor={HEADER_BUTTONS.profile.bgColor}
-              rotation={HEADER_BUTTONS.profile.rotation}
+              bgColor={HEADER_BUTTONS.close.bgColor}
+              rotation={HEADER_BUTTONS.close.rotation}
+              size="md"
               onClick={handleClose}
+              ariaLabel={ONBOARDING_MESSAGES.closeButton}
             />
           </div>
         </div>

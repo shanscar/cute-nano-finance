@@ -37,4 +37,16 @@ export const HEADER_BUTTONS = {
     /** Slight clockwise rotation for asymmetry */
     rotation: 'rotate-1',
   },
+  back: {
+    /** Background color for back button */
+    bgColor: 'bg-badge-yellow/50',
+    /** Slight counter-clockwise rotation */
+    rotation: 'rotate-[-1deg]',
+  },
+  close: {
+    /** Background color for close button */
+    bgColor: 'bg-badge-pink/50',
+    /** Slight clockwise rotation */
+    rotation: 'rotate-1',
+  },
 } as const;
