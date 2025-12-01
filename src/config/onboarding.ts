@@ -276,4 +276,5 @@ export const ONBOARDING_MESSAGES = {
   nextButton: '下一步',
   completeButton: '完成',
   backButton: '返回',
+  closeButton: '關閉',
 };
