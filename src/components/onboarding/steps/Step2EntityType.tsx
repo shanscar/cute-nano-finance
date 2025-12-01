@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: Full step → Native screen
 import { OnboardingLayout } from '../OnboardingLayout';
 import { SelectionCard } from '../SelectionCard';
 import { useOnboarding } from '@/hooks/use-onboarding';

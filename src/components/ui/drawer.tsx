@@ -1,3 +1,5 @@
+// @platform: web
+// Note: Use react-native-bottom-sheet for RN equivalent
 "use client"
 
 import * as React from "react"

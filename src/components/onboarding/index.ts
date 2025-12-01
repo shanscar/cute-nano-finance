@@ -1,3 +1,4 @@
+// @platform: web
 // Layout
 export { OnboardingLayout } from './OnboardingLayout';
 export { ProgressBar } from './ProgressBar';

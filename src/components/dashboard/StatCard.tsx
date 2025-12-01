@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: div → View, p → Text
 import { StatCardConfig } from "@/types/dashboard";
 import { cn } from "@/lib/utils";
 

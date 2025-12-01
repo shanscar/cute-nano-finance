@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: Button → Pressable, className stays (NativeWind)
 import { Button } from "@/components/ui/button";
 import { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";

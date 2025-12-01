@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: button → Pressable, span/p → Text
 import { cn } from '@/lib/utils';
 
 interface ToggleQuestionProps {

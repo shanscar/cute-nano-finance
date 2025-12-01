@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: button → Pressable, span → Text
 import { cn } from '@/lib/utils';
 
 interface IndustryCardProps {

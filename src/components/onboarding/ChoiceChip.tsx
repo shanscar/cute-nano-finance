@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: button → Pressable
 import { cn } from '@/lib/utils';
 
 interface ChoiceChipProps {

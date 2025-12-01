@@ -1,3 +1,5 @@
+// @platform: web
+// Note: Use react-native-toast-message for RN equivalent
 import { useToast } from "@/hooks/use-toast";
 import { Toast, ToastClose, ToastDescription, ToastProvider, ToastTitle, ToastViewport } from "@/components/ui/toast";
 

@@ -1,3 +1,5 @@
+// @platform: web
+// Note: React Native has different tooltip patterns
 import * as React from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 

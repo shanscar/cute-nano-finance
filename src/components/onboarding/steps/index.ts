@@ -1,3 +1,4 @@
+// @platform: web
 export { Step1ContactInfo } from './Step1ContactInfo';
 export { Step2EntityType } from './Step2EntityType';
 export { Step3Industry } from './Step3Industry';

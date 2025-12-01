@@ -1,3 +1,5 @@
+// @platform: web
+// Note: React Native needs different toast library (react-native-toast-message)
 import * as React from "react";
 
 import type { ToastActionElement, ToastProps } from "@/components/ui/toast";

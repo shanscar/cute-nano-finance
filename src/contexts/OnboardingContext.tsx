@@ -1,5 +1,8 @@
+// @platform: adaptable
+// Note: Uses storage abstraction layer for cross-platform compatibility
 import { createContext, useContext, useState, useCallback, ReactNode, useEffect } from 'react';
 import { OnboardingStep, OnboardingFormData, OnboardingState, initialFormData } from '@/types/onboarding';
+import { storage } from '@/lib/storage';
 
 interface OnboardingContextType extends OnboardingState {
   nextStep: () => void;
@@ -21,7 +24,7 @@ export const OnboardingProvider = ({ children }: { children: ReactNode }) => {
 
   // Load saved progress on mount
   useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
+    const saved = storage.getItem(STORAGE_KEY);
     if (saved) {
       try {
         const { currentStep: savedStep, formData: savedData, isComplete: savedComplete } = JSON.parse(saved);
@@ -36,7 +39,7 @@ export const OnboardingProvider = ({ children }: { children: ReactNode }) => {
 
   // Save progress on changes
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ currentStep, formData, isComplete }));
+    storage.setItem(STORAGE_KEY, JSON.stringify({ currentStep, formData, isComplete }));
   }, [currentStep, formData, isComplete]);
 
   const nextStep = useCallback(() => {
@@ -66,14 +69,14 @@ export const OnboardingProvider = ({ children }: { children: ReactNode }) => {
     // Reset state so next time user opens onboarding they start fresh
     setCurrentStep(1);
     setFormData(initialFormData);
-    localStorage.removeItem(STORAGE_KEY);
+    storage.removeItem(STORAGE_KEY);
   }, [formData]);
 
   const resetOnboarding = useCallback(() => {
     setCurrentStep(1);
     setFormData(initialFormData);
     setIsComplete(false);
-    localStorage.removeItem(STORAGE_KEY);
+    storage.removeItem(STORAGE_KEY);
   }, []);
 
   return (

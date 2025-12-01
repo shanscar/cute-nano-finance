@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: Button → Pressable, img → Image
 import { Button } from "@/components/ui/button";
 import { buttonArrow } from "@/assets";
 import { ActionButtonConfig } from "@/types";

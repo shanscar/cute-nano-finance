@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: Full step → Native screen, file input → expo-document-picker
 import { useNavigate } from 'react-router-dom';
 import { OnboardingLayout } from '../OnboardingLayout';
 import { SuccessAnimation } from '../SuccessAnimation';

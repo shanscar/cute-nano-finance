@@ -1,3 +1,4 @@
+// @platform: shared
 /**
  * Application-wide configuration constants
  * 

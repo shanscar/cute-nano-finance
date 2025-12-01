@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: Full step → Native screen
 import { OnboardingLayout } from '../OnboardingLayout';
 import { ToggleQuestion } from '../ToggleQuestion';
 import { useOnboarding } from '@/hooks/use-onboarding';

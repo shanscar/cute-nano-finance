@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: div → View, p/h2 → Text, img → Image
 import { eyes } from "@/assets";
 
 interface BalanceCardProps {

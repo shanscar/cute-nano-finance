@@ -1,3 +1,4 @@
+// @platform: shared
 /**
  * Design system theme constants
  * 

@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: Full step → Native screen
 import { useState } from 'react';
 import { OnboardingLayout } from '../OnboardingLayout';
 import { IndustryCard } from '../IndustryCard';

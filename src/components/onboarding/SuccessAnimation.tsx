@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: div → View, svg → react-native-svg or Lottie
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 

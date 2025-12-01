@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: Full page → Native screen with react-navigation
 import { ACTION_BUTTONS, STATS_CONFIG, APP_CONFIG } from "@/config";
 import { DashboardLayout } from "@/components/layout";
 import { TaglineBadge, BalanceCard, ActionRow } from "@/components/dashboard";

@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: Full page → Native screen with react-navigation
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { DashboardLayout } from "@/components/layout";

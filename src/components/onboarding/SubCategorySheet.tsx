@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: Drawer → Native Modal/BottomSheet
 import { useState, useEffect } from 'react';
 import {
   Drawer,
