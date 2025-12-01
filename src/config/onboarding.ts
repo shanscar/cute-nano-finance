@@ -97,7 +97,7 @@ export const INDUSTRY_WITH_SUBCATEGORIES: IndustryWithSubCategories[] = [
     subCategories: [
       { value: 'youtuber', label: 'YouTuber' },
       { value: 'instagram', label: 'Instagram KOL' },
-      { value: 'tiktok', label: 'TikTok 創作者' },
+      { value: 'tiktok', label: 'TikTok / 小紅書' },
       { value: 'podcast', label: 'Podcast 主持' },
       { value: 'blogger', label: '部落客/寫手' },
       { value: 'designer', label: '設計師' },
