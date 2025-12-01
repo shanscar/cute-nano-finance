@@ -1,11 +1,13 @@
 import { ReactNode } from 'react';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { ProgressBar } from './ProgressBar';
 import { useOnboarding } from '@/hooks/use-onboarding';
 import { ONBOARDING_MESSAGES } from '@/config/onboarding';
-import { GRADIENTS, BORDERS, SHADOWS } from '@/config/theme';
+import { GRADIENTS, SHADOWS } from '@/config/theme';
 import { HEADER_BUTTONS } from '@/config/app';
+import { HeaderIconButton } from '@/components/dashboard/HeaderIconButton';
 
 interface OnboardingLayoutProps {
   children: ReactNode;
@@ -25,6 +27,9 @@ export const OnboardingLayout = ({
   nextDisabled = false,
 }: OnboardingLayoutProps) => {
   const { currentStep, prevStep, progress, currentStepConfig } = useOnboarding();
+  const navigate = useNavigate();
+
+  const handleClose = () => navigate('/');
 
   return (
     <div 
@@ -41,8 +46,7 @@ export const OnboardingLayout = ({
                 onClick={prevStep}
                 className={cn(
                   "p-2 rounded-xl transition-all duration-200",
-                  BORDERS.thick,
-                  "border-black",
+                  "border-4 border-black",
                   HEADER_BUTTONS.menu.bgColor,
                   HEADER_BUTTONS.menu.rotation,
                   SHADOWS.standard,
@@ -64,6 +68,12 @@ export const OnboardingLayout = ({
                 progress={progress}
               />
             </div>
+            <HeaderIconButton
+              icon={X}
+              bgColor={HEADER_BUTTONS.profile.bgColor}
+              rotation={HEADER_BUTTONS.profile.rotation}
+              onClick={handleClose}
+            />
           </div>
         </div>
       </header>
@@ -98,8 +108,7 @@ export const OnboardingLayout = ({
               disabled={nextDisabled}
               className={cn(
                 "w-full py-4 px-6 rounded-xl font-bold text-lg",
-                BORDERS.standard,
-                "border-black transition-all duration-200",
+                "border-3 border-black transition-all duration-200",
                 "active:scale-[0.98]",
                 nextDisabled
                   ? "bg-muted text-muted-foreground cursor-not-allowed"
