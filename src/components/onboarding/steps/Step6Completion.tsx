@@ -17,7 +17,7 @@ export const Step6Completion = () => {
 
   return (
     <OnboardingLayout
-      showBackButton={false}
+      showBackButton={true}
       showNextButton
       nextButtonText={ONBOARDING_MESSAGES.completeButton}
       onNext={handleComplete}
