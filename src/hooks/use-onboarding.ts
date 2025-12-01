@@ -15,6 +15,13 @@ export const useOnboarding = () => {
     return contactName.trim() !== '' && emailRegex.test(email) && companyName.trim() !== '';
   }, [context.formData]);
 
+  const isStep3Valid = useMemo(() => {
+    // At least one industry with sub-categories or custom input
+    return context.formData.industries.some(
+      (ind) => ind.subCategories.length > 0 || ind.customInput
+    );
+  }, [context.formData.industries]);
+
   const isStep4Valid = useMemo(() => {
     // At least one bank or payment platform selected
     return context.formData.banks.length > 0 || context.formData.paymentPlatforms.length > 0;
@@ -27,7 +34,7 @@ export const useOnboarding = () => {
       case 2:
         return context.formData.entityType !== null;
       case 3:
-        return context.formData.industry !== null;
+        return isStep3Valid;
       case 4:
         return isStep4Valid;
       case 5:
@@ -49,6 +56,7 @@ export const useOnboarding = () => {
     canProceed,
     progress,
     isStep1Valid,
+    isStep3Valid,
     isStep4Valid,
   };
 };

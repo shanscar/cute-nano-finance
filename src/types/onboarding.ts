@@ -15,6 +15,13 @@ export type IndustryCategory =
   | 'health_wellness'
   | 'other';
 
+// Step 3: Industry selection with sub-categories
+export interface IndustrySelection {
+  category: IndustryCategory;
+  subCategories: string[];
+  customInput?: string;
+}
+
 // Step 4: Payment channels
 export type BankType = 'hsbc' | 'hang_seng' | 'za_bank' | 'boc' | 'standard_chartered' | 'other';
 export type PaymentPlatform = 'stripe' | 'paypal' | 'payme' | 'fps' | 'wechat_pay' | 'alipay' | 'other';
@@ -29,8 +36,8 @@ export interface OnboardingFormData {
   // Step 2
   entityType: EntityType | null;
   
-  // Step 3
-  industry: IndustryCategory | null;
+  // Step 3 - Multi-select with sub-categories
+  industries: IndustrySelection[];
   
   // Step 4
   banks: BankType[];
@@ -60,7 +67,7 @@ export const initialFormData: OnboardingFormData = {
   email: '',
   companyName: '',
   entityType: null,
-  industry: null,
+  industries: [],
   banks: [],
   paymentPlatforms: [],
   usesPersonalAccount: false,
