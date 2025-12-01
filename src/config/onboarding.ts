@@ -24,8 +24,8 @@ export const ONBOARDING_STEPS: StepConfig[] = [
   {
     step: 3,
     title: '你的業務主要屬於哪個範疇？',
-    subtitle: '這有助我們找出你所屬行業的專屬扣稅項目。',
-    autoAdvance: true,
+    subtitle: '可選擇多個，點擊查看細分類別。',
+    autoAdvance: false,
   },
   {
     step: 4,
@@ -76,23 +76,131 @@ export const ENTITY_TYPE_OPTIONS: EntityTypeOption[] = [
   },
 ];
 
-// Industry options for Step 3
+// Sub-category options
+export interface SubCategoryOption {
+  value: string;
+  label: string;
+}
+
+export interface IndustryWithSubCategories {
+  value: IndustryCategory;
+  label: string;
+  icon: string;
+  subCategories: SubCategoryOption[];
+}
+
+export const INDUSTRY_WITH_SUBCATEGORIES: IndustryWithSubCategories[] = [
+  {
+    value: 'digital_creator',
+    label: '數碼創作',
+    icon: '🎨',
+    subCategories: [
+      { value: 'youtuber', label: 'YouTuber' },
+      { value: 'instagram', label: 'Instagram KOL' },
+      { value: 'tiktok', label: 'TikTok 創作者' },
+      { value: 'podcast', label: 'Podcast 主持' },
+      { value: 'blogger', label: '部落客/寫手' },
+      { value: 'designer', label: '設計師' },
+      { value: 'photographer', label: '攝影師' },
+      { value: 'videographer', label: '影片製作' },
+    ],
+  },
+  {
+    value: 'ecommerce',
+    label: '電商零售',
+    icon: '🛒',
+    subCategories: [
+      { value: 'shopify', label: 'Shopify 店主' },
+      { value: 'amazon', label: 'Amazon 賣家' },
+      { value: 'ebay', label: 'eBay 賣家' },
+      { value: 'carousell', label: 'Carousell 賣家' },
+      { value: 'dropshipping', label: 'Dropshipping' },
+      { value: 'handmade', label: '手作商品' },
+    ],
+  },
+  {
+    value: 'professional_services',
+    label: '專業服務',
+    icon: '💼',
+    subCategories: [
+      { value: 'consultant', label: '顧問' },
+      { value: 'lawyer', label: '法律服務' },
+      { value: 'accountant', label: '會計服務' },
+      { value: 'marketing', label: '市場推廣' },
+      { value: 'it_services', label: 'IT 服務' },
+      { value: 'hr', label: '人力資源' },
+    ],
+  },
+  {
+    value: 'food_beverage',
+    label: '餐飲食品',
+    icon: '🍽️',
+    subCategories: [
+      { value: 'restaurant', label: '餐廳' },
+      { value: 'cafe', label: '咖啡店' },
+      { value: 'bakery', label: '烘焙/麵包店' },
+      { value: 'catering', label: '到會服務' },
+      { value: 'food_delivery', label: '外賣/配送' },
+      { value: 'food_truck', label: '流動餐車' },
+    ],
+  },
+  {
+    value: 'retail',
+    label: '實體零售',
+    icon: '🏬',
+    subCategories: [
+      { value: 'fashion', label: '時裝服飾' },
+      { value: 'electronics', label: '電子產品' },
+      { value: 'home_goods', label: '家居用品' },
+      { value: 'sports', label: '運動用品' },
+      { value: 'pet', label: '寵物用品' },
+    ],
+  },
+  {
+    value: 'education',
+    label: '教育培訓',
+    icon: '📚',
+    subCategories: [
+      { value: 'tutoring', label: '補習/私教' },
+      { value: 'language', label: '語言教學' },
+      { value: 'music', label: '音樂教學' },
+      { value: 'online_course', label: '線上課程' },
+      { value: 'coaching', label: '教練/培訓' },
+    ],
+  },
+  {
+    value: 'health_wellness',
+    label: '健康美容',
+    icon: '💆',
+    subCategories: [
+      { value: 'gym', label: '健身房/教練' },
+      { value: 'yoga', label: '瑜伽/冥想' },
+      { value: 'beauty_salon', label: '美容院' },
+      { value: 'spa', label: 'SPA/按摩' },
+      { value: 'nutrition', label: '營養師' },
+      { value: 'therapy', label: '治療師' },
+    ],
+  },
+  {
+    value: 'other',
+    label: '其他行業',
+    icon: '📋',
+    subCategories: [], // Empty - uses custom input only
+  },
+];
+
+// Legacy: Keep for backwards compatibility if needed
 export interface IndustryOption {
   value: IndustryCategory;
   label: string;
   icon: string;
 }
 
-export const INDUSTRY_OPTIONS: IndustryOption[] = [
-  { value: 'digital_creator', label: '數碼創作', icon: '🎨' },
-  { value: 'ecommerce', label: '電商零售', icon: '🛒' },
-  { value: 'professional_services', label: '專業服務', icon: '💼' },
-  { value: 'food_beverage', label: '餐飲食品', icon: '🍽️' },
-  { value: 'retail', label: '實體零售', icon: '🏬' },
-  { value: 'education', label: '教育培訓', icon: '📚' },
-  { value: 'health_wellness', label: '健康美容', icon: '💆' },
-  { value: 'other', label: '其他行業', icon: '📋' },
-];
+export const INDUSTRY_OPTIONS: IndustryOption[] = INDUSTRY_WITH_SUBCATEGORIES.map(({ value, label, icon }) => ({
+  value,
+  label,
+  icon,
+}));
 
 // Bank options for Step 4
 export interface BankOption {
