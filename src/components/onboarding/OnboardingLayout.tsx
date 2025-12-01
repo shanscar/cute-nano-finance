@@ -40,10 +40,10 @@ export const OnboardingLayout = ({
       <header className="sticky top-0 z-10 backdrop-blur-sm px-8 py-5 border-b-3 border-black">
         <div className="max-w-lg mx-auto">
           <div className="flex items-center gap-4 mb-4">
-            {showBackButton && currentStep > 1 ? (
+            {showBackButton ? (
               <button
                 type="button"
-                onClick={prevStep}
+                onClick={currentStep === 1 ? handleClose : prevStep}
                 className={cn(
                   "p-2 rounded-xl transition-all duration-200",
                   "border-4 border-black",
@@ -59,7 +59,7 @@ export const OnboardingLayout = ({
                 <ArrowLeft className="w-5 h-5 text-foreground" />
               </button>
             ) : (
-              <div className="w-11" /> // Spacer
+              <div className="w-11" />
             )}
             <div className="flex-1">
               <ProgressBar
