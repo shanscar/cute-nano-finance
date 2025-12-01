@@ -1,0 +1,54 @@
+import { useMemo } from 'react';
+import { useOnboardingContext } from '@/contexts/OnboardingContext';
+import { ONBOARDING_STEPS } from '@/config/onboarding';
+
+export const useOnboarding = () => {
+  const context = useOnboardingContext();
+  
+  const currentStepConfig = useMemo(() => {
+    return ONBOARDING_STEPS.find((s) => s.step === context.currentStep);
+  }, [context.currentStep]);
+
+  const isStep1Valid = useMemo(() => {
+    const { contactName, email, companyName } = context.formData;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return contactName.trim() !== '' && emailRegex.test(email) && companyName.trim() !== '';
+  }, [context.formData]);
+
+  const isStep4Valid = useMemo(() => {
+    // At least one bank or payment platform selected
+    return context.formData.banks.length > 0 || context.formData.paymentPlatforms.length > 0;
+  }, [context.formData]);
+
+  const canProceed = useMemo(() => {
+    switch (context.currentStep) {
+      case 1:
+        return isStep1Valid;
+      case 2:
+        return context.formData.entityType !== null;
+      case 3:
+        return context.formData.industry !== null;
+      case 4:
+        return isStep4Valid;
+      case 5:
+        return true; // All toggles have default values
+      case 6:
+        return true;
+      default:
+        return false;
+    }
+  }, [context.currentStep, context.formData, isStep1Valid, isStep4Valid]);
+
+  const progress = useMemo(() => {
+    return (context.currentStep / 6) * 100;
+  }, [context.currentStep]);
+
+  return {
+    ...context,
+    currentStepConfig,
+    canProceed,
+    progress,
+    isStep1Valid,
+    isStep4Valid,
+  };
+};
