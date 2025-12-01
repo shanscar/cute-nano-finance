@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: input → TextInput, label → Text
 import { cn } from '@/lib/utils';
 import { InputHTMLAttributes, forwardRef } from 'react';
 

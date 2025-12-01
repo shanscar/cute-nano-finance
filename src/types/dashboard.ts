@@ -1,3 +1,4 @@
+// @platform: shared
 export interface ActionButtonConfig {
   id: string;
   label: string;

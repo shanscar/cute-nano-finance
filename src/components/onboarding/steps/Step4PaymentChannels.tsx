@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: Full step → Native screen
 import { OnboardingLayout } from '../OnboardingLayout';
 import { LogoGrid } from '../LogoGrid';
 import { ToggleQuestion } from '../ToggleQuestion';

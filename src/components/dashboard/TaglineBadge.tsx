@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: div → View, p → Text, img → Image
 import { sparkle } from "@/assets";
 
 interface TaglineBadgeProps {

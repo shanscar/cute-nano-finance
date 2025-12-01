@@ -1,3 +1,4 @@
+// @platform: web
 // Dashboard components barrel export
 export { ActionButton } from './ActionButton';
 export { ActionRow } from './ActionRow';

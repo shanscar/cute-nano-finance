@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: Full layout → SafeAreaView + react-navigation
 import { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { Menu, User } from "lucide-react";

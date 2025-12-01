@@ -1,3 +1,5 @@
+// @platform: web
+// Note: Use react-native-toast-message for RN equivalent
 import { useTheme } from "next-themes";
 import { Toaster as Sonner, toast } from "sonner";
 

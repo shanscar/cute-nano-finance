@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: Full page → Native screen with react-navigation
 import { OnboardingProvider } from '@/contexts/OnboardingContext';
 import { useOnboarding } from '@/hooks/use-onboarding';
 import {

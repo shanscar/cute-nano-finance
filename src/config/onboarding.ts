@@ -1,3 +1,4 @@
+// @platform: shared
 import { OnboardingStep, EntityType, IndustryCategory, BankType, PaymentPlatform } from '@/types/onboarding';
 
 // Step configuration

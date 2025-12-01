@@ -1,3 +1,5 @@
+// @platform: adaptable
+// Note: Pure state hook, works cross-platform
 import { useState } from 'react';
 
 export const useBalance = (initialBalance: string = '0.00') => {

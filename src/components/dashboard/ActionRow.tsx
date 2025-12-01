@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: div → View, img → Image
 import { connector } from "@/assets";
 import { ActionButton } from "./ActionButton";
 import { StatCard } from "./StatCard";

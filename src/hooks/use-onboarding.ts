@@ -1,3 +1,5 @@
+// @platform: adaptable
+// Note: Pure logic hook, works cross-platform
 import { useMemo } from 'react';
 import { useOnboardingContext } from '@/contexts/OnboardingContext';
 import { ONBOARDING_STEPS } from '@/config/onboarding';

@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: Full step → Native screen
 import { useState, useEffect } from 'react';
 import { OnboardingLayout } from '../OnboardingLayout';
 import { OnboardingInput } from '../OnboardingInput';

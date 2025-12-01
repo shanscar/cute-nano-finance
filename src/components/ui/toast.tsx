@@ -1,3 +1,5 @@
+// @platform: web
+// Note: Use react-native-toast-message for RN equivalent
 import * as React from "react";
 import * as ToastPrimitives from "@radix-ui/react-toast";
 import { cva, type VariantProps } from "class-variance-authority";

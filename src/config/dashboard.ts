@@ -1,3 +1,4 @@
+// @platform: shared
 import { piggybankCartoon, receipt } from "@/assets";
 import { ActionButtonConfig, StatCardConfig } from "@/types";
 

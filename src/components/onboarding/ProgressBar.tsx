@@ -1,3 +1,5 @@
+// @platform: web
+// Conversion: div → View, span → Text
 import { cn } from '@/lib/utils';
 
 interface ProgressBarProps {
