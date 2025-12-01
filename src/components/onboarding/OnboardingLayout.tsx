@@ -32,11 +32,7 @@ export const OnboardingLayout = ({
       style={{ background: GRADIENTS.main }}
     >
       {/* Header with back button and progress */}
-      <header className={cn(
-        "sticky top-0 z-10 backdrop-blur-sm px-8 py-5",
-        BORDERS.standard,
-        "border-b border-black"
-      )}>
+      <header className="sticky top-0 z-10 backdrop-blur-sm px-8 py-5 border-b-3 border-black">
         <div className="max-w-lg mx-auto">
           <div className="flex items-center gap-4 mb-4">
             {showBackButton && currentStep > 1 ? (
@@ -94,11 +90,7 @@ export const OnboardingLayout = ({
 
       {/* Footer with next button */}
       {showNextButton && (
-        <footer className={cn(
-          "sticky bottom-0 backdrop-blur-sm px-8 py-5",
-          BORDERS.standard,
-          "border-t border-black"
-        )}>
+        <footer className="sticky bottom-0 backdrop-blur-sm px-8 py-5 border-t-3 border-black">
           <div className="max-w-lg mx-auto">
             <button
               type="button"
