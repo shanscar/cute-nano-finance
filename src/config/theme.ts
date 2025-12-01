@@ -29,3 +29,17 @@ export const BORDERS = {
   /** Thick border (4px) - for extra emphasis on primary actions */
   thick: 'border-4',
 } as const;
+
+/**
+ * Shadow tokens for brutalist design
+ * @constant
+ * @description Use these for consistent offset shadows throughout the app.
+ */
+export const SHADOWS = {
+  /** Standard shadow (3px offset) - for buttons and interactive elements */
+  standard: 'shadow-[3px_3px_0px_rgba(0,0,0,1)]',
+  /** Hover shadow (5px offset) - for hover states */
+  hover: 'shadow-[5px_5px_0px_rgba(0,0,0,1)]',
+  /** Small shadow (2px offset) - for subtle elements like cards */
+  small: 'shadow-[2px_2px_0px_rgba(0,0,0,1)]',
+} as const;
