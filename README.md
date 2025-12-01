@@ -1,222 +1,612 @@
 # Money Flow 💰
 
-A brutalist-style personal finance tracker built with modern web technologies. Track your income and expenses with a bold, playful interface designed for clarity and ease of use.
+個人財務追蹤器，採用 Brutalist 設計風格，使用現代 Web 技術構建。
 
-## 🎨 About This Project
+---
 
-Money Flow is a minimalist finance tracking app featuring a distinctive "brutalist" design aesthetic:
-- **Thick black borders** and **hard shadows** for visual impact
-- **Playful rotations** and **vibrant accent colors** (yellow, pink, cyan)
-- **Clean, distraction-free** interface focused on core actions
-- **Hong Kong Dollar (HK$)** as default currency
+## 📖 目錄
 
-## 🏗️ Project Structure
+- [關於本項目](#-關於本項目)
+- [快速開始](#-快速開始)
+- [項目結構](#-項目結構)
+- [Onboarding 用戶流程](#-onboarding-用戶流程)
+- [設計系統](#-設計系統)
+- [配置指南](#-配置指南)
+- [React Native 遷移指南](#-react-native-遷移指南)
+- [Monorepo 結構 (Turborepo)](#-monorepo-結構-turborepo)
 
-```
-src/
-├── assets/          # SVG icons and images (centralized exports)
-├── components/      # React components
-│   ├── dashboard/   # Main dashboard UI components (ActionButton, BalanceCard, etc.)
-│   ├── layout/      # Layout wrappers (DashboardLayout)
-│   └── ui/          # shadcn-ui base components (Button, Toast, etc.)
-├── config/          # ⭐ Configuration constants (SINGLE SOURCE OF TRUTH)
-│   ├── app.ts       # App metadata (name, currency, header buttons)
-│   ├── dashboard.ts # Dashboard content (action buttons, stats config)
-│   ├── theme.ts     # Design tokens (gradients, borders)
-│   └── index.ts     # Barrel export for all config
-├── hooks/           # Custom React hooks (useBalance, useToast)
-├── lib/             # Utility functions (cn for className merging)
-├── pages/           # Route components (Index, NotFound)
-└── types/           # TypeScript type definitions
-```
+---
 
-### 📁 Key Architecture Decisions
+## 📖 關於本項目
 
-1. **Barrel Exports**: Each folder has an `index.ts` that exports all components/config
-   - Import from folders, not individual files: `import { Button } from '@/components/ui'`
-   - Cleaner imports, easier refactoring, better maintainability
+### Tech Stack
 
-2. **Config-Driven UI**: All constants live in `src/config/`
-   - Change app name, currency, colors in one place
-   - No magic strings scattered throughout code
+- **React 18** + **TypeScript**
+- **Vite** - Build tool
+- **Tailwind CSS** - Styling
+- **shadcn/ui** - UI Components
+- **React Router DOM** - Routing
+- **Lucide React** - Icons
 
-3. **Type Safety**: TypeScript interfaces in `src/types/` ensure consistency
-   - `ActionButtonConfig` defines button structure
-   - `StatCardConfig` defines stat card structure
+### 主要功能
 
-## 🎯 Key Features
+- 💰 餘額追蹤
+- 📊 月度統計（收入/支出）
+- 📱 響應式 Mobile-First 設計
+- 🎨 Brutalist 設計風格
+- 📝 6 步驟 Onboarding 流程
 
-- **Balance Tracking** with clear visual hierarchy
-- **Quick Action Buttons** for logging income/expense transactions
-- **Monthly Statistics** display (income/expense this month)
-- **Brutalist Design System** with consistent styling tokens
-- **Fully Responsive** layout (mobile-first approach)
-- **Accessible** components using shadcn-ui primitives
+---
 
-## 🎨 Design System
-
-### Colors (HSL Format)
-- **Income**: Vibrant cyan `hsl(195 100% 58%)` - represents positive cash flow
-- **Expense**: Soft pink `hsl(315 100% 82%)` - represents spending
-- **Accents**: 
-  - Yellow badge `hsl(48 90% 70%)`
-  - Pink badge `hsl(300 50% 85%)`
-  - Blue badge `hsl(200 60% 75%)`
-  - White badge `hsl(0 0% 100%)`
-- **Borders**: Always black `hsl(0 0% 0%)` for maximum contrast
-
-### Typography
-- **Headings**: Space Grotesk (bold, modern, geometric)
-- **Body**: Inter (clean, readable, professional)
-
-### Shadows & Borders
-- **Brutalist offset shadows**: `shadow-[3px_3px_0px_rgba(0,0,0,1)]`
-- **Hover lift effect**: `shadow-[5px_5px_0px_rgba(0,0,0,1)]` with translate
-- **Border widths**: `border-3` (3px) or `border-4` (4px) - always bold
-
-### Layout Patterns
-- Cards use `rounded-3xl` for friendly, approachable feel
-- Thick borders + hard shadows = brutalist aesthetic
-- Slight rotations (`rotate-1`, `rotate-6`) add playfulness
-
-## 🚀 Getting Started
+## 🚀 快速開始
 
 ### Prerequisites
-- **Node.js 18+** & npm ([install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
-- Modern browser (Chrome, Firefox, Safari, Edge)
 
-### Local Development
+- Node.js 18+
+- npm 或 pnpm
 
-```sh
-# Clone the repository
-git clone <YOUR_GIT_URL>
+### 本地開發
 
-# Navigate to project directory
+```bash
+# Clone repository
+git clone <repository-url>
 cd money-flow
 
 # Install dependencies
 npm install
 
-# Start development server
+# Start dev server
 npm run dev
 ```
 
-The app will be available at `http://localhost:5173`
+### Build & Deploy
 
-### Build for Production
-
-```sh
-# Create optimized production build
+```bash
+# Production build
 npm run build
 
-# Preview production build locally
+# Preview production build
 npm run preview
 ```
 
-## 🛠️ Technologies Used
+---
 
-- **React 18** - Modern UI framework with hooks
-- **TypeScript** - Type safety and better developer experience
-- **Vite** - Lightning-fast build tool and dev server
-- **Tailwind CSS** - Utility-first styling framework
-- **shadcn-ui** - Accessible, unstyled component primitives
-- **Lucide React** - Beautiful, consistent icon library
-- **React Router** - Client-side routing
-- **React Hook Form** - Form state management (ready for expansion)
-- **Zod** - Schema validation (ready for expansion)
+## 🏗️ 項目結構
 
-## 📝 How to Customize
-
-### Change App Name/Currency
-Edit `src/config/app.ts`:
-```typescript
-export const APP_CONFIG = {
-  name: 'Your App Name',      // Change app title
-  tagline: 'Your tagline',     // Change subtitle
-  currency: '€',               // Change currency symbol
-}
+```
+src/
+├── assets/              # SVG 圖標資源
+├── components/
+│   ├── dashboard/       # Dashboard 組件
+│   ├── layout/          # Layout 組件
+│   ├── onboarding/      # Onboarding 組件
+│   └── ui/              # shadcn/ui 組件
+├── config/              # 配置文件（單一來源）
+│   ├── app.ts           # App 元數據
+│   ├── dashboard.ts     # Dashboard 配置
+│   ├── onboarding.ts    # Onboarding 選項
+│   └── theme.ts         # 設計 tokens
+├── contexts/            # React Context
+├── hooks/               # Custom Hooks
+├── lib/                 # 工具函數
+│   ├── utils.ts         # cn() 函數
+│   └── storage.ts       # Storage 抽象層
+├── pages/               # 頁面組件
+└── types/               # TypeScript 類型
 ```
 
-### Modify Dashboard Actions
-Edit `src/config/dashboard.ts` to add/remove/modify action buttons:
-```typescript
-export const ACTION_BUTTONS: ActionButtonConfig[] = [
-  {
-    id: 'transfer',
-    label: 'Transfer',
-    icon: transferIcon,
-    bgColor: 'bg-badge-blue',
-    // ... other config
-  },
-  // Add more buttons here
-];
-```
+### Architecture Decisions
 
-### Update Colors
-Modify CSS variables in `src/index.css` (root section):
-```css
-:root {
-  --income: 195 100% 58%;      /* Change income color */
-  --expense: 315 100% 82%;     /* Change expense color */
-  --badge-yellow: 48 90% 70%;  /* Change badge colors */
-}
-```
-
-Or update Tailwind config in `tailwind.config.ts` for additional colors.
-
-### Add New Components
-1. Create component in appropriate folder (`components/dashboard/`, etc.)
-2. Export from barrel file (`index.ts` in that folder)
-3. Import using clean path:
-   ```typescript
-   import { MyComponent } from '@/components/dashboard';
-   ```
-
-### Add New Routes
-1. Create page component in `src/pages/`
-2. Update router in `src/App.tsx`
-3. Use `DashboardLayout` wrapper for consistent header
-
-## 🌐 Deployment
-
-### Deploy to Lovable (Easiest)
-1. Open [Lovable Project](https://lovable.dev/projects/364cda25-571b-476f-b49e-6c18d2ed4889)
-2. Click **Share → Publish**
-3. Your app is live! 🎉
-
-### Deploy to Vercel/Netlify
-```sh
-# Build the project
-npm run build
-
-# Deploy the 'dist' folder to your hosting provider
-```
-
-### Custom Domain
-Navigate to **Project > Settings > Domains** in Lovable to connect your own domain.
-
-[Read more about custom domains](https://docs.lovable.dev/features/custom-domain)
-
-## 📚 Learn More
-
-- [Lovable Documentation](https://docs.lovable.dev/) - AI-powered development platform
-- [React Documentation](https://react.dev/) - Official React docs
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [shadcn-ui](https://ui.shadcn.com/) - Re-usable component library
-- [Vite Guide](https://vitejs.dev/guide/) - Fast build tooling
-
-## 🤝 Contributing
-
-This project was built with [Lovable](https://lovable.dev). Changes can be made through:
-
-1. **Lovable's AI Editor** - Natural language prompts to update code
-2. **Direct Code Editing** - Clone repo and edit in your preferred IDE
-3. **GitHub Pull Requests** - Collaborate with team members
-
-All changes sync automatically between Lovable and GitHub repository.
+| 模式 | 說明 |
+|------|------|
+| **Barrel Exports** | 每個文件夾有 `index.ts`，簡化 imports |
+| **Config-Driven UI** | 所有選項集中喺 `src/config/` |
+| **Type Safety** | 所有數據有 TypeScript 類型 |
+| **Platform Markers** | 每個文件有 `@platform` 標記（見遷移指南） |
 
 ---
 
-**Built with ❤️ using [Lovable](https://lovable.dev)**
+## 📱 Onboarding 用戶流程
 
-*Tracking finances has never looked this good.*
+### 流程概覽
+
+6 步驟 Typeform 風格流程，支援 auto-save 到 localStorage。
+
+```mermaid
+flowchart LR
+    A[Dashboard] -->|點擊 User Icon| B[Step 1: 聯絡資料]
+    B --> C[Step 2: 公司類型]
+    C -->|Auto Advance| D[Step 3: 行業選擇]
+    D --> E[Step 4: 付款渠道]
+    E --> F[Step 5: 稅務問題]
+    F --> G[Step 6: 完成]
+    G -->|Reset & Return| A
+```
+
+### 步驟詳細邏輯
+
+| Step | 名稱 | Auto-Advance | Validation Rules | 組件 |
+|------|------|:------------:|------------------|------|
+| 1 | 聯絡資料 | ❌ | `name` + `email` (valid format) + `company` | `Step1ContactInfo` |
+| 2 | 公司類型 | ✅ | 選擇任一選項即自動進入下一步 | `Step2EntityType` |
+| 3 | 行業選擇 | ❌ | ≥1 個 sub-category 或 custom input | `Step3Industry` |
+| 4 | 付款渠道 | ❌ | ≥1 個 bank 或 payment platform | `Step4PaymentChannels` |
+| 5 | 稅務問題 | ❌ | 全部 toggle 有 default 值 | `Step5TaxQuestions` |
+| 6 | 完成 | - | - | `Step6Completion` |
+
+### Validation 邏輯（`use-onboarding.ts`）
+
+```typescript
+// Step 1: 聯絡資料
+const isStep1Valid = contactName.trim() !== '' 
+  && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) 
+  && companyName.trim() !== '';
+
+// Step 3: 行業選擇
+const isStep3Valid = industries.some(
+  (ind) => ind.subCategories.length > 0 || ind.customInput
+);
+
+// Step 4: 付款渠道
+const isStep4Valid = banks.length > 0 || paymentPlatforms.length > 0;
+```
+
+### 狀態管理
+
+#### OnboardingContext
+
+```typescript
+interface OnboardingContextType {
+  currentStep: number;
+  formData: OnboardingFormData;
+  isComplete: boolean;
+  nextStep: () => void;
+  prevStep: () => void;
+  goToStep: (step: number) => void;
+  updateFormData: (data: Partial<OnboardingFormData>) => void;
+  completeOnboarding: () => void;
+  resetOnboarding: () => void;
+}
+```
+
+#### Form Data 結構
+
+```typescript
+interface OnboardingFormData {
+  // Step 1
+  contactName: string;
+  email: string;
+  companyName: string;
+  
+  // Step 2
+  entityType: EntityType | null;
+  
+  // Step 3
+  industries: IndustrySelection[];
+  
+  // Step 4
+  banks: BankType[];
+  paymentPlatforms: PaymentPlatform[];
+  
+  // Step 5
+  hasOverseasClients: boolean;
+  hasOfficeSpace: boolean;
+  hasEmployees: boolean;
+  hasInventory: boolean;
+}
+```
+
+#### Auto-Save
+
+進度自動儲存到 localStorage：
+- Key: `onboarding_progress`
+- 包含: `currentStep`, `formData`, `isComplete`
+
+### 用戶行為邏輯
+
+| 元素 | Step 1 行為 | Step 2-6 行為 |
+|------|-------------|---------------|
+| **Back Button** | 返回 Dashboard (`/`) | 返回上一步 |
+| **Close Button** | 返回 Dashboard | 返回 Dashboard |
+| **Next Button** | 進入 Step 2（需 validation） | 進入下一步 |
+
+### 組件架構
+
+```
+Onboarding.tsx (Page)
+└── OnboardingProvider (Context)
+    └── OnboardingSteps (Step Router)
+        └── Step1-6 Components
+            └── OnboardingLayout (Wrapper)
+                ├── Header
+                │   ├── HeaderIconButton (Back)
+                │   ├── ProgressBar
+                │   └── HeaderIconButton (Close)
+                ├── Content Area
+                │   └── Step-specific UI
+                └── Footer (Optional)
+                    └── Next Button
+```
+
+### Step 3: 行業選擇特殊邏輯
+
+1. 選擇主行業 → 打開 Bottom Sheet (Drawer)
+2. 選擇 sub-categories 或輸入 "其他"
+3. 點擊確認 → 關閉 Sheet，顯示選擇數量 badge
+4. 支援多個主行業同時選擇
+
+---
+
+## 🎨 設計系統
+
+### Colors (HSL)
+
+定義喺 `src/index.css`：
+
+```css
+:root {
+  --background: 45 100% 96%;      /* 米黃色背景 */
+  --foreground: 0 0% 0%;          /* 黑色文字 */
+  --primary: 45 100% 62%;         /* 金黃色 */
+  --secondary: 45 100% 85%;       /* 淺黃色 */
+  --accent: 330 100% 71%;         /* 粉紅色 */
+}
+```
+
+### Typography
+
+- **Display**: Space Grotesk（標題）
+- **Body**: Inter（內文）
+
+### Shadows & Borders (`src/config/theme.ts`)
+
+```typescript
+export const BORDERS = {
+  standard: '3px',
+  thick: '4px',
+};
+
+export const SHADOWS = {
+  standard: '3px 3px 0px 0px rgba(0,0,0,1)',
+  hover: '5px 5px 0px 0px rgba(0,0,0,1)',
+  small: '2px 2px 0px 0px rgba(0,0,0,1)',
+};
+```
+
+### Button System
+
+`HeaderIconButton` 組件支援三種 size：
+
+| Size | Dimensions | 使用場景 |
+|------|------------|----------|
+| `sm` | h-10 w-10 | 小型按鈕 |
+| `md` | h-12 w-12 | Onboarding header |
+| `lg` | h-14 w-14 | Dashboard header |
+
+---
+
+## ⚙️ 配置指南
+
+### 修改 App 設定
+
+`src/config/app.ts`:
+
+```typescript
+export const APP_CONFIG = {
+  name: 'Money Flow',
+  currency: 'HK$',  // 修改貨幣符號
+  version: '1.0.0',
+};
+```
+
+### 修改 Onboarding 選項
+
+`src/config/onboarding.ts`:
+
+```typescript
+// 修改公司類型選項
+export const ENTITY_TYPE_OPTIONS = [
+  { id: 'limited', label: '有限公司', icon: Building2 },
+  // 添加更多...
+];
+
+// 修改行業選項
+export const INDUSTRY_WITH_SUBCATEGORIES = [
+  {
+    id: 'digital',
+    label: '數碼創作',
+    icon: Laptop,
+    subCategories: ['YouTuber', 'KOL', ...],
+  },
+  // 添加更多...
+];
+```
+
+### 修改 Dashboard 動作
+
+`src/config/dashboard.ts`:
+
+```typescript
+export const DASHBOARD_ACTIONS = [
+  { id: 'expense', label: '支出', icon: ArrowDownLeft },
+  { id: 'income', label: '收入', icon: ArrowUpRight },
+  // 添加更多...
+];
+```
+
+---
+
+## 🔄 React Native 遷移指南
+
+### Platform Markers
+
+每個文件頂部都有 `@platform` 標記：
+
+| 標記 | 含義 | 轉換工作量 |
+|------|------|-----------|
+| `@platform: shared` | 100% 可共享 | 直接複製 |
+| `@platform: adaptable` | 需要少量調整 | 改 import/API |
+| `@platform: web` | 需要轉換 | UI 重寫 |
+
+### 共享代碼（直接複製）
+
+```
+src/types/**           → packages/shared/types/
+src/config/**          → packages/shared/config/
+src/lib/utils.ts       → packages/shared/lib/
+src/lib/storage.ts     → packages/shared/lib/ (需替換實現)
+```
+
+### 需要適配的代碼
+
+```
+src/contexts/**        → 檢查 storage import
+src/hooks/**           → 檢查 Web-specific APIs
+```
+
+### 元素對照表
+
+| Web (React) | Native (NativeWind) | 備註 |
+|-------------|---------------------|------|
+| `<div>` | `<View>` | 容器元素 |
+| `<span>`, `<p>` | `<Text>` | 所有文字必須包在 Text 內 |
+| `<button>` | `<Pressable>` | 或 `<TouchableOpacity>` |
+| `<img>` | `<Image>` | 需要 `source={{ uri: '...' }}` |
+| `<input>` | `<TextInput>` | |
+| `onClick` | `onPress` | |
+| `onChange` | `onChangeText` | TextInput 專用 |
+| `className` | `className` | NativeWind 支援！ |
+
+### Tailwind 類別支援
+
+#### ✅ 完全支援
+
+```
+flex, flex-row, flex-col, items-center, justify-between, gap-4
+p-4, px-6, py-2, m-2, mx-auto, mt-8
+w-full, h-12, w-14, min-h-screen
+bg-primary, bg-background, text-foreground, border-border
+rounded-xl, rounded-full, border-4, border-black
+text-lg, font-semibold, text-center
+```
+
+#### ⚠️ 需要注意
+
+| Web | Native 替代方案 |
+|-----|-----------------|
+| `hover:` | `active:` 或移除 |
+| `shadow-[custom]` | 使用預設 shadow 或 StyleSheet |
+| `cursor-pointer` | 移除（無意義） |
+| CSS Grid | 使用 Flexbox |
+
+#### ❌ 不支援
+
+- `hover:*` 前綴（觸屏無 hover）
+- 部分 CSS 屬性（如 `box-shadow` 自定義值）
+- CSS Grid
+
+### Storage 抽象層
+
+已實現 `src/lib/storage.ts`：
+
+```typescript
+// Web 版本（現有）
+export const storage = {
+  getItem: (key: string) => localStorage.getItem(key),
+  setItem: (key: string, value: string) => localStorage.setItem(key, value),
+  removeItem: (key: string) => localStorage.removeItem(key),
+};
+
+// React Native 版本（需替換）
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+export const storage = {
+  getItem: (key: string) => AsyncStorage.getItem(key),
+  setItem: (key: string, value: string) => AsyncStorage.setItem(key, value),
+  removeItem: (key: string) => AsyncStorage.removeItem(key),
+};
+```
+
+### 路由對照
+
+| Web (react-router-dom) | Native (expo-router) |
+|------------------------|----------------------|
+| `useNavigate()` | `useRouter()` |
+| `navigate('/')` | `router.push('/')` |
+| `navigate(-1)` | `router.back()` |
+| `<Link to="/">` | `<Link href="/">` |
+| `useParams()` | `useLocalSearchParams()` |
+
+---
+
+## 🏢 Monorepo 結構 (Turborepo)
+
+### 目標目錄結構
+
+```
+money-flow/
+├── apps/
+│   ├── web/                 # 現有 React Web App
+│   │   ├── src/
+│   │   ├── package.json
+│   │   └── vite.config.ts
+│   └── native/              # 新 React Native App
+│       ├── app/             # Expo Router pages
+│       ├── src/
+│       │   ├── components/  # Native UI 組件
+│       │   └── screens/     # 對應 web/pages
+│       ├── package.json
+│       └── app.json
+├── packages/
+│   └── shared/              # 共享代碼
+│       ├── types/
+│       ├── config/
+│       ├── lib/
+│       ├── contexts/
+│       ├── hooks/
+│       └── package.json
+├── package.json             # Root workspace
+├── pnpm-workspace.yaml
+└── turbo.json
+```
+
+### 設置步驟
+
+#### 1. 初始化 Turborepo
+
+```bash
+npx @turbo/codemod create-turbo-config
+```
+
+#### 2. 配置 Workspace
+
+`pnpm-workspace.yaml`:
+```yaml
+packages:
+  - "apps/*"
+  - "packages/*"
+```
+
+`turbo.json`:
+```json
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {},
+    "type-check": {}
+  }
+}
+```
+
+#### 3. 設置 Shared Package
+
+`packages/shared/package.json`:
+```json
+{
+  "name": "@money-flow/shared",
+  "version": "0.0.0",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./types": "./src/types/index.ts",
+    "./config": "./src/config/index.ts",
+    "./hooks": "./src/hooks/index.ts",
+    "./contexts": "./src/contexts/index.ts",
+    "./lib": "./src/lib/index.ts"
+  }
+}
+```
+
+#### 4. 引用 Shared Package
+
+在 `apps/web/package.json` 和 `apps/native/package.json`:
+```json
+{
+  "dependencies": {
+    "@money-flow/shared": "workspace:*"
+  }
+}
+```
+
+### 搬遷清單
+
+| 來源 | 目標 | 備註 |
+|------|------|------|
+| `src/types/*` | `packages/shared/types/` | 直接複製 |
+| `src/config/*` | `packages/shared/config/` | 直接複製 |
+| `src/lib/utils.ts` | `packages/shared/lib/` | 直接複製 |
+| `src/lib/storage.ts` | `packages/shared/lib/` | 提供 Web/Native 兩個實現 |
+| `src/contexts/*` | `packages/shared/contexts/` | 更新 storage import |
+| `src/hooks/*` | `packages/shared/hooks/` | 檢查 Web APIs |
+
+### React Native (Expo) 設置
+
+```bash
+cd apps
+npx create-expo-app native --template blank-typescript
+cd native
+npx expo install nativewind tailwindcss
+```
+
+NativeWind 配置：`apps/native/tailwind.config.js`:
+```javascript
+module.exports = {
+  content: [
+    "./app/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "../../packages/shared/**/*.{js,jsx,ts,tsx}"
+  ],
+  presets: [require("nativewind/preset")],
+  theme: {
+    extend: {
+      // 複製 web 的 theme 配置
+    }
+  }
+}
+```
+
+### 開發命令
+
+```bash
+# 全部 apps
+pnpm dev
+
+# 只跑 web
+pnpm dev --filter=web
+
+# 只跑 native
+pnpm dev --filter=native
+
+# Build 全部
+pnpm build
+
+# Type check
+pnpm type-check
+```
+
+---
+
+## 📚 資源連結
+
+- [Lovable Docs](https://docs.lovable.dev/)
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [NativeWind](https://www.nativewind.dev/)
+- [Turborepo](https://turbo.build/)
+
+---
+
+## 📝 License
+
+MIT
