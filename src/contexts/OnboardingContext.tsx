@@ -62,6 +62,11 @@ export const OnboardingProvider = ({ children }: { children: ReactNode }) => {
     setIsComplete(true);
     // Here you would typically send data to backend
     console.log('Onboarding completed:', formData);
+    
+    // Reset state so next time user opens onboarding they start fresh
+    setCurrentStep(1);
+    setFormData(initialFormData);
+    localStorage.removeItem(STORAGE_KEY);
   }, [formData]);
 
   const resetOnboarding = useCallback(() => {
