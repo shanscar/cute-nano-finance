@@ -25,7 +25,7 @@ export interface IndustrySelection {
 
 // Step 4: Payment channels
 export type BankType = 'hsbc' | 'hang_seng' | 'za_bank' | 'boc' | 'standard_chartered' | 'other';
-export type PaymentPlatform = 'stripe' | 'paypal' | 'payme' | 'fps' | 'wechat_pay' | 'alipay' | 'other';
+export type PaymentPlatform = 'stripe' | 'octopus' | 'payme' | 'fps' | 'wechat_pay' | 'alipay' | 'other';
 
 // Complete form data
 export interface OnboardingFormData {
