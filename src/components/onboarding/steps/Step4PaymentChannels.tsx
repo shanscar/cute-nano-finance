@@ -17,6 +17,17 @@ export const Step4PaymentChannels = () => {
       nextDisabled={!isStep4Valid}
     >
       <div className="space-y-8">
+        {/* Personal account toggle */}
+        <div>
+          <ToggleQuestion
+            question="你是否會用私人戶口處理公司支出或收入？"
+            icon="💳"
+            value={formData.usesPersonalAccount}
+            onChange={(value) => updateFormData('usesPersonalAccount', value)}
+            helperText={ONBOARDING_MESSAGES.personalAccountWarning}
+          />
+        </div>
+
         {/* Banks section */}
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-4">
@@ -40,17 +51,6 @@ export const Step4PaymentChannels = () => {
             selectedValues={formData.paymentPlatforms}
             onChange={(values) => updateFormData('paymentPlatforms', values as PaymentPlatform[])}
             columns={3}
-          />
-        </div>
-
-        {/* Personal account toggle */}
-        <div>
-          <ToggleQuestion
-            question="你是否會用私人戶口處理公司支出或收入？"
-            icon="💳"
-            value={formData.usesPersonalAccount}
-            onChange={(value) => updateFormData('usesPersonalAccount', value)}
-            helperText={ONBOARDING_MESSAGES.personalAccountWarning}
           />
         </div>
       </div>
