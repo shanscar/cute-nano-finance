@@ -226,12 +226,19 @@ export interface PaymentPlatformOption {
 }
 
 export const PAYMENT_PLATFORM_OPTIONS: PaymentPlatformOption[] = [
+  // 本地支付
   { value: 'octopus', label: '八達通' },
   { value: 'payme', label: 'PayMe' },
   { value: 'fps', label: '轉數快 FPS' },
+  // 中國支付
   { value: 'wechat_pay', label: 'WeChat Pay' },
   { value: 'alipay', label: '支付寶' },
+  // 跨境支付
   { value: 'stripe', label: 'Stripe' },
+  { value: 'airwallex', label: 'Airwallex' },
+  { value: 'wise', label: 'Wise' },
+  { value: 'hitpay', label: 'HitPay' },
+  // 其他
   { value: 'other', label: '其他' },
 ];
 
