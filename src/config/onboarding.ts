@@ -226,12 +226,12 @@ export interface PaymentPlatformOption {
 }
 
 export const PAYMENT_PLATFORM_OPTIONS: PaymentPlatformOption[] = [
-  { value: 'stripe', label: 'Stripe' },
-  { value: 'paypal', label: 'PayPal' },
+  { value: 'octopus', label: '八達通' },
   { value: 'payme', label: 'PayMe' },
   { value: 'fps', label: '轉數快 FPS' },
   { value: 'wechat_pay', label: 'WeChat Pay' },
   { value: 'alipay', label: '支付寶' },
+  { value: 'stripe', label: 'Stripe' },
   { value: 'other', label: '其他' },
 ];
 
