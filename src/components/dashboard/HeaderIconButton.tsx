@@ -17,6 +17,7 @@ interface HeaderIconButtonProps {
   bgColor: string;
   rotation: string;
   size?: ButtonSize;
+  rounded?: 'xl' | 'full';
   onClick?: () => void;
   ariaLabel?: string;
 }
@@ -26,6 +27,7 @@ export const HeaderIconButton = ({
   bgColor, 
   rotation, 
   size = 'lg',
+  rounded = 'xl',
   onClick,
   ariaLabel,
 }: HeaderIconButtonProps) => {
@@ -38,7 +40,8 @@ export const HeaderIconButton = ({
       onClick={onClick}
       aria-label={ariaLabel}
       className={cn(
-        "rounded-xl border-4 border-black shadow-[3px_3px_0px_rgba(0,0,0,1)]",
+        rounded === 'full' ? "rounded-full" : "rounded-xl",
+        "border-4 border-black shadow-[3px_3px_0px_rgba(0,0,0,1)]",
         "hover:shadow-[5px_5px_0px_rgba(0,0,0,1)] hover:scale-110",
         "transition-all duration-200",
         config.button,

@@ -35,6 +35,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           bgColor={HEADER_BUTTONS.profile.bgColor}
           rotation={HEADER_BUTTONS.profile.rotation}
           onClick={handleUserClick}
+          rounded="full"
         />
       </header>
 
