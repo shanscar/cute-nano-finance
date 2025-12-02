@@ -18,6 +18,7 @@ interface OnboardingLayoutProps {
   nextButtonText?: string;
   onNext?: () => void;
   nextDisabled?: boolean;
+  buttonVariant?: 'default' | 'success';
 }
 
 export const OnboardingLayout = ({
@@ -27,6 +28,7 @@ export const OnboardingLayout = ({
   nextButtonText = ONBOARDING_MESSAGES.nextButton,
   onNext,
   nextDisabled = false,
+  buttonVariant = 'default',
 }: OnboardingLayoutProps) => {
   const { currentStep, prevStep, progress, currentStepConfig } = useOnboarding();
   const navigate = useNavigate();
@@ -107,11 +109,17 @@ export const OnboardingLayout = ({
                 "active:scale-[0.98]",
                 nextDisabled
                   ? "bg-muted text-muted-foreground cursor-not-allowed"
-                  : cn(
-                      "bg-primary text-primary-foreground hover:bg-primary/90",
-                      SHADOWS.standard,
-                      `hover:${SHADOWS.hover}`
-                    )
+                  : buttonVariant === 'success'
+                    ? cn(
+                        "bg-badge-green text-foreground hover:brightness-95",
+                        SHADOWS.standard,
+                        `hover:${SHADOWS.hover}`
+                      )
+                    : cn(
+                        "bg-primary text-primary-foreground hover:bg-primary/90",
+                        SHADOWS.standard,
+                        `hover:${SHADOWS.hover}`
+                      )
               )}
             >
               {nextButtonText}

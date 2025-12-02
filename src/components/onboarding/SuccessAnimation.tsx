@@ -25,14 +25,14 @@ export const SuccessAnimation = ({ message }: SuccessAnimationProps) => {
     <div className="flex flex-col items-center justify-center py-8">
       <div
         className={cn(
-          "w-24 h-24 rounded-full border-4 border-primary flex items-center justify-center",
+          "w-24 h-24 rounded-full border-4 border-badge-green flex items-center justify-center",
           "transition-all duration-500",
           showCheck ? "scale-100 opacity-100" : "scale-50 opacity-0"
         )}
       >
         <svg
           className={cn(
-            "w-12 h-12 text-primary transition-all duration-300 delay-200",
+            "w-12 h-12 text-badge-green transition-all duration-300 delay-200",
             showCheck ? "scale-100 opacity-100" : "scale-0 opacity-0"
           )}
           fill="none"
