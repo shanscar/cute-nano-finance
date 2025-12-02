@@ -23,6 +23,7 @@ export const Step6Completion = () => {
       showNextButton
       nextButtonText={ONBOARDING_MESSAGES.completeButton}
       onNext={handleComplete}
+      buttonVariant="success"
     >
       <div className="text-center">
         <SuccessAnimation message={ONBOARDING_MESSAGES.completionMessage} />
