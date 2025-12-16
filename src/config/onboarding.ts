@@ -60,19 +60,19 @@ export const ENTITY_TYPE_OPTIONS: EntityTypeOption[] = [
   {
     value: 'limited',
     label: '有限公司 (Ltd)',
-    description: '需要審計，獨立法律實體',
+    description: '有商業登記，需審計，獨立法律實體',
     icon: '🏢',
   },
   {
     value: 'sole_proprietor',
     label: '無限公司/獨資',
-    description: '個人報稅，無需審計',
+    description: '有商業登記，個人報稅，無需審計',
     icon: '🏪',
   },
   {
     value: 'freelancer',
-    label: '純個人接案',
-    description: 'Freelancer / Slasher',
+    label: '兼職/副業/自僱人士',
+    description: '無商業登記，個人收入',
     icon: '💼',
   },
 ];
