@@ -43,8 +43,8 @@ export const Step4PaymentChannels = () => {
 
         {/* Payment platforms section */}
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-4">
-            支付平台
+        <h3 className="text-lg font-semibold text-foreground mb-4">
+            虛擬銀行
           </h3>
           <LogoGrid
             options={PAYMENT_PLATFORM_OPTIONS}
