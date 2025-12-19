@@ -276,6 +276,22 @@ export const TAX_QUESTIONS: TaxQuestion[] = [
   },
 ];
 
+// Step 4 section labels
+export const STEP4_SECTION_LABELS = {
+  companyAccounts: {
+    title: '公司戶口',
+    subtitle: '會用銀行賬單自動對帳',
+  },
+  personalAccounts: {
+    title: '私人戶口',
+    subtitle: '需要人手確認每筆交易',
+  },
+  paymentPlatforms: {
+    title: '收款平台',
+    subtitle: '會自動同步交易記錄',
+  },
+};
+
 // Messages
 export const ONBOARDING_MESSAGES = {
   personalAccountWarning: '小貼士：私人戶口會預設為『手動確認』，確保買餸 🥦、交罰款 🚘 呢啲私人消費唔會誤當公司支出！',
