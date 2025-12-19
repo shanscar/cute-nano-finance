@@ -12,15 +12,15 @@ export interface StepConfig {
 export const ONBOARDING_STEPS: StepConfig[] = [
   {
     step: 1,
-    title: '你嘅資料，係慳稅嘅第一步',
-    subtitle: '我會根據你填嘅內容，為你度身訂造最佳稅務方案。',
+    title: '關於你',
+    subtitle: '我哋需要你嘅聯絡資料，方便跟進稅務方案。',
     autoAdvance: false,
   },
   {
     step: 2,
-    title: '你的業務目前是用哪種方式營運？',
-    subtitle: '這有助我們了解你的稅務需求。',
-    autoAdvance: true,
+    title: '關於你嘅公司',
+    subtitle: '填寫公司資料，幫助我哋了解你嘅業務類型。',
+    autoAdvance: false,
   },
   {
     step: 3,

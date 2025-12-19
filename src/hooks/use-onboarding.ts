@@ -12,9 +12,14 @@ export const useOnboarding = () => {
   }, [context.currentStep]);
 
   const isStep1Valid = useMemo(() => {
-    const { contactName, email, companyName } = context.formData;
+    const { contactName, email } = context.formData;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return contactName.trim() !== '' && emailRegex.test(email) && companyName.trim() !== '';
+    return contactName.trim() !== '' && emailRegex.test(email);
+  }, [context.formData]);
+
+  const isStep2Valid = useMemo(() => {
+    const { companyName, entityType } = context.formData;
+    return companyName.trim() !== '' && entityType !== null;
   }, [context.formData]);
 
   const isStep3Valid = useMemo(() => {
@@ -38,7 +43,7 @@ export const useOnboarding = () => {
       case 1:
         return isStep1Valid;
       case 2:
-        return context.formData.entityType !== null;
+        return isStep2Valid;
       case 3:
         return isStep3Valid;
       case 4:
@@ -50,7 +55,7 @@ export const useOnboarding = () => {
       default:
         return false;
     }
-  }, [context.currentStep, context.formData, isStep1Valid, isStep4Valid]);
+  }, [context.currentStep, context.formData, isStep1Valid, isStep2Valid, isStep4Valid]);
 
   const progress = useMemo(() => {
     return (context.currentStep / 6) * 100;
@@ -62,6 +67,7 @@ export const useOnboarding = () => {
     canProceed,
     progress,
     isStep1Valid,
+    isStep2Valid,
     isStep3Valid,
     isStep4Valid,
   };
