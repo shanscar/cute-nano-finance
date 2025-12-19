@@ -6,6 +6,12 @@ import { Menu, User } from "lucide-react";
 import { HeaderIconButton } from "@/components/dashboard/HeaderIconButton";
 import { GRADIENTS } from "@/config/theme";
 import { HEADER_BUTTONS } from "@/config/app";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface DashboardLayoutProps {
   children: ReactNode;
@@ -13,10 +19,6 @@ interface DashboardLayoutProps {
 
 export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   const navigate = useNavigate();
-
-  const handleUserClick = () => {
-    navigate('/onboarding');
-  };
 
   return (
     <div 
@@ -30,13 +32,27 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           bgColor={HEADER_BUTTONS.menu.bgColor}
           rotation={HEADER_BUTTONS.menu.rotation}
         />
-        <HeaderIconButton 
-          icon={User} 
-          bgColor={HEADER_BUTTONS.profile.bgColor}
-          rotation={HEADER_BUTTONS.profile.rotation}
-          onClick={handleUserClick}
-          rounded="full"
-        />
+        
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <div>
+              <HeaderIconButton 
+                icon={User} 
+                bgColor={HEADER_BUTTONS.profile.bgColor}
+                rotation={HEADER_BUTTONS.profile.rotation}
+                rounded="full"
+              />
+            </div>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-48">
+            <DropdownMenuItem onClick={() => navigate('/onboarding')}>
+              👤 我的資料
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => navigate('/documents')}>
+              📂 我的文件
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </header>
 
       {/* Main Content */}
