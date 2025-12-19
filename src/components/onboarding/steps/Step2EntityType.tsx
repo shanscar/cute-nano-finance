@@ -16,14 +16,25 @@ export const Step2EntityType = () => {
 
   const handleSelect = (value: EntityType) => {
     updateFormData('entityType', value);
+    // 如果切換到自僱人士，清除公司名稱錯誤
+    if (value === 'freelancer') {
+      setErrors((prev) => ({ ...prev, companyName: '' }));
+    }
   };
 
+  // 條件式邏輯
+  const showCompanyName = formData.entityType !== null;
+  const isCompanyNameRequired = formData.entityType !== 'freelancer';
+  const companyNameLabel = formData.entityType === 'freelancer' 
+    ? '品牌/個人名稱' 
+    : '公司名稱';
+
   const handleNext = () => {
-    const newErrors = {
-      companyName: formData.companyName.trim() === '' ? '請輸入公司/業務名稱' : '',
-    };
-    
-    setErrors(newErrors);
+    // 只有非自僱人士需要驗證公司名稱
+    if (isCompanyNameRequired && formData.companyName.trim() === '') {
+      setErrors({ companyName: '請輸入公司名稱' });
+      return;
+    }
     
     if (isStep2Valid) {
       nextStep();
@@ -44,16 +55,7 @@ export const Step2EntityType = () => {
       nextDisabled={!isStep2Valid}
     >
       <div className="space-y-6">
-        <OnboardingInput
-          label="公司/業務名稱"
-          placeholder="請輸入你的公司或業務名稱"
-          value={formData.companyName}
-          onChange={(e) => updateFormData('companyName', e.target.value)}
-          error={errors.companyName}
-          required
-          autoFocus
-        />
-        
+        {/* 先選公司類型 */}
         <div className="space-y-3">
           <label className="block text-sm font-semibold text-foreground">
             公司類型<span className="text-destructive ml-1">*</span>
@@ -71,6 +73,21 @@ export const Step2EntityType = () => {
             ))}
           </div>
         </div>
+
+        {/* 條件式顯示公司名稱 */}
+        {showCompanyName && (
+          <OnboardingInput
+            label={companyNameLabel}
+            placeholder={isCompanyNameRequired 
+              ? '請輸入你的公司名稱' 
+              : '無公司名稱可以留空'}
+            value={formData.companyName}
+            onChange={(e) => updateFormData('companyName', e.target.value)}
+            error={errors.companyName}
+            required={isCompanyNameRequired}
+            helperText={!isCompanyNameRequired ? '💡 無公司名稱可以留空' : undefined}
+          />
+        )}
       </div>
     </OnboardingLayout>
   );
