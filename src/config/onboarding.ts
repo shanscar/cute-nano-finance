@@ -42,8 +42,8 @@ export const ONBOARDING_STEPS: StepConfig[] = [
   },
   {
     step: 6,
-    title: '大功告成！開始記錄你嘅收支啦',
-    subtitle: '你隨時可以喺「我的文件」上傳 BR 證書等文件，等會計師需要時用。',
+    title: '大功告成！',
+    subtitle: '我哋會發送登入連結到你嘅電郵，記得查收 📬',
     autoAdvance: false,
   },
 ];
@@ -295,12 +295,21 @@ export const STEP4_SECTION_LABELS = {
 // Messages
 export const ONBOARDING_MESSAGES = {
   personalAccountWarning: '小貼士：私人戶口會預設為『手動確認』，確保買餸 🥦、交罰款 🚘 呢啲私人消費唔會誤當公司支出！',
-  completionMessage: '你已經可以開始用 app 記錄收入同支出喇！',
-  uploadLaterTitle: '📂 文件稍後補交都得',
-  uploadLaterDescription: '喺主頁可以隨時進入「我的文件」專區，補交 BR 證書、身份證明等。',
-  uploadLaterHint: '會計師需要時會提你，唔使急住搵。',
+  
+  // Step 6 完成頁面
+  completionMessage: '我哋會發送登入連結到你嘅電郵，記得查收 📬',
+  
+  // Email 提示
+  emailReminderTitle: '📬 留意你嘅電郵',
+  emailReminderDescription: '我哋會發送登入連結俾你設定密碼，之後就可以正式開始使用。',
+  
+  // 文件上傳區（可選）
+  uploadOptionalTitle: '📂 順便上傳文件？',
+  uploadOptionalDescription: '如果你手頭有 BR 證書或身份證明，可以依家上傳。',
+  uploadOptionalHint: '之後喺「我的文件」都可以補交，唔使急。',
+  
   nextButton: '下一步',
-  completeButton: '開始使用',
+  completeButton: '完成',
   backButton: '返回',
   closeButton: '關閉',
 };
