@@ -208,14 +208,15 @@ export interface BankOption {
   value: BankType;
   label: string;
   shortLabel: string;
+  logo?: string;
 }
 
 export const BANK_OPTIONS: BankOption[] = [
-  { value: 'hsbc', label: '滙豐銀行', shortLabel: 'HSBC' },
-  { value: 'hang_seng', label: '恒生銀行', shortLabel: '恒生' },
-  { value: 'za_bank', label: 'ZA Bank', shortLabel: 'ZA' },
-  { value: 'boc', label: '中國銀行', shortLabel: '中銀' },
-  { value: 'standard_chartered', label: '渣打銀行', shortLabel: '渣打' },
+  { value: 'hsbc', label: '滙豐銀行', shortLabel: 'HSBC', logo: 'https://logo.clearbit.com/hsbc.com' },
+  { value: 'hang_seng', label: '恒生銀行', shortLabel: '恒生', logo: 'https://logo.clearbit.com/hangseng.com' },
+  { value: 'za_bank', label: 'ZA Bank', shortLabel: 'ZA', logo: 'https://logo.clearbit.com/za.group' },
+  { value: 'boc', label: '中國銀行', shortLabel: '中銀', logo: 'https://logo.clearbit.com/bochk.com' },
+  { value: 'standard_chartered', label: '渣打銀行', shortLabel: '渣打', logo: 'https://logo.clearbit.com/sc.com' },
   { value: 'other', label: '其他銀行', shortLabel: '其他' },
 ];
 
@@ -223,21 +224,22 @@ export const BANK_OPTIONS: BankOption[] = [
 export interface PaymentPlatformOption {
   value: PaymentPlatform;
   label: string;
+  logo?: string;
 }
 
 export const PAYMENT_PLATFORM_OPTIONS: PaymentPlatformOption[] = [
   // 本地支付
-  { value: 'octopus', label: '八達通' },
-  { value: 'payme', label: 'PayMe' },
+  { value: 'octopus', label: '八達通', logo: 'https://logo.clearbit.com/octopus.com.hk' },
+  { value: 'payme', label: 'PayMe', logo: 'https://logo.clearbit.com/payme.hsbc.com.hk' },
   { value: 'fps', label: '轉數快 FPS' },
   // 中國支付
-  { value: 'wechat_pay', label: 'WeChat Pay' },
-  { value: 'alipay', label: '支付寶' },
+  { value: 'wechat_pay', label: 'WeChat Pay', logo: 'https://logo.clearbit.com/wechat.com' },
+  { value: 'alipay', label: '支付寶', logo: 'https://logo.clearbit.com/alipay.com' },
   // 跨境支付
-  { value: 'stripe', label: 'Stripe' },
-  { value: 'airwallex', label: 'Airwallex' },
-  { value: 'wise', label: 'Wise' },
-  { value: 'hitpay', label: 'HitPay' },
+  { value: 'stripe', label: 'Stripe', logo: 'https://logo.clearbit.com/stripe.com' },
+  { value: 'airwallex', label: 'Airwallex', logo: 'https://logo.clearbit.com/airwallex.com' },
+  { value: 'wise', label: 'Wise', logo: 'https://logo.clearbit.com/wise.com' },
+  { value: 'hitpay', label: 'HitPay', logo: 'https://logo.clearbit.com/hitpayapp.com' },
   // 其他
   { value: 'other', label: '其他' },
 ];
