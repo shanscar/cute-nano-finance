@@ -30,8 +30,8 @@ export const ONBOARDING_STEPS: StepConfig[] = [
   },
   {
     step: 4,
-    title: '你的生意通常會使用哪些渠道收付款？',
-    subtitle: '只需點擊你使用的選項，無需輸入帳號。',
+    title: '你平時用咩戶口處理公司收支？',
+    subtitle: '公司戶口會自動對賬單；私人戶口需要人手確認。',
     autoAdvance: false,
   },
   {
