@@ -8,6 +8,7 @@ interface ToggleQuestionProps {
   value: boolean;
   onChange: (value: boolean) => void;
   helperText?: string;
+  children?: React.ReactNode;
 }
 
 export const ToggleQuestion = ({
@@ -16,13 +17,17 @@ export const ToggleQuestion = ({
   value,
   onChange,
   helperText,
+  children,
 }: ToggleQuestionProps) => {
+  const hasExpandedContent = value && children;
+
   return (
     <div className="w-full">
       <div className={cn(
         "p-4 rounded-xl border-3 transition-all duration-200",
         "flex items-center gap-4",
-        value ? "border-primary bg-primary/5" : "border-border bg-card"
+        value ? "border-primary bg-primary/5" : "border-border bg-card",
+        hasExpandedContent && "rounded-b-none border-b-0"
       )}>
         <span className="text-2xl">{icon}</span>
         <p className="flex-1 font-medium text-foreground">{question}</p>
@@ -51,7 +56,25 @@ export const ToggleQuestion = ({
           </span>
         </button>
       </div>
-      {value && helperText && (
+      
+      {/* Expanded content area */}
+      {hasExpandedContent && (
+        <div className={cn(
+          "border-3 border-t-0 border-primary rounded-b-xl",
+          "bg-primary/5 p-4 pt-3",
+          "animate-fade-in"
+        )}>
+          {helperText && (
+            <p className="text-sm text-primary mb-4">
+              💡 {helperText}
+            </p>
+          )}
+          {children}
+        </div>
+      )}
+      
+      {/* Helper text without children */}
+      {value && helperText && !children && (
         <p className="mt-2 ml-4 text-sm text-primary animate-fade-in">
           💡 {helperText}
         </p>
