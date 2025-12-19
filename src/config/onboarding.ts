@@ -278,7 +278,7 @@ export const TAX_QUESTIONS: TaxQuestion[] = [
 
 // Messages
 export const ONBOARDING_MESSAGES = {
-  personalAccountWarning: '請放心，我們會專業地幫你公私分明。',
+  personalAccountWarning: '小貼士：私人戶口會預設為『手動確認』，確保買餸 🥦、交罰款 🚘 呢啲私人消費唔會誤當公司支出！',
   completionMessage: '我們已收到所有基礎資料，你的專屬會計師將會於 24 小時內與你聯繫，討論你的具體服務方案。',
   uploadPrompt: '如果你手頭有 BR 證書或身份證明，現在可拍照上傳。',
   nextButton: '下一步',
