@@ -19,7 +19,11 @@ export const useOnboarding = () => {
 
   const isStep2Valid = useMemo(() => {
     const { companyName, entityType } = context.formData;
-    return companyName.trim() !== '' && entityType !== null;
+    if (!entityType) return false;
+    // 自僱人士唔需要公司名稱
+    if (entityType === 'freelancer') return true;
+    // 其他類型需要公司名稱
+    return companyName.trim() !== '';
   }, [context.formData]);
 
   const isStep3Valid = useMemo(() => {
