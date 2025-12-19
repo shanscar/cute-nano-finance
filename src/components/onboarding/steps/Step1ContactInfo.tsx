@@ -10,7 +10,6 @@ export const Step1ContactInfo = () => {
   const [errors, setErrors] = useState({
     contactName: '',
     email: '',
-    companyName: '',
   });
 
   const validateEmail = (email: string) => {
@@ -22,7 +21,6 @@ export const Step1ContactInfo = () => {
     const newErrors = {
       contactName: formData.contactName.trim() === '' ? '請輸入聯絡人名稱' : '',
       email: !validateEmail(formData.email) ? '請輸入有效的電郵地址' : '',
-      companyName: formData.companyName.trim() === '' ? '請輸入公司/業務名稱' : '',
     };
     
     setErrors(newErrors);
@@ -44,12 +42,6 @@ export const Step1ContactInfo = () => {
       setErrors((prev) => ({ ...prev, email: '' }));
     }
   }, [formData.email, errors.email]);
-
-  useEffect(() => {
-    if (formData.companyName.trim() !== '' && errors.companyName) {
-      setErrors((prev) => ({ ...prev, companyName: '' }));
-    }
-  }, [formData.companyName, errors.companyName]);
 
   return (
     <OnboardingLayout
@@ -85,14 +77,6 @@ export const Step1ContactInfo = () => {
           onChange={(e) => updateFormData('whatsappPhone', e.target.value)}
           prefix="+852"
           helperText="💬 方便我哋 WhatsApp 聯絡你，更快回應問題"
-        />
-        <OnboardingInput
-          label="公司/業務名稱"
-          placeholder="請輸入你的公司或業務名稱"
-          value={formData.companyName}
-          onChange={(e) => updateFormData('companyName', e.target.value)}
-          error={errors.companyName}
-          required
         />
       </div>
     </OnboardingLayout>
