@@ -42,8 +42,8 @@ export const ONBOARDING_STEPS: StepConfig[] = [
   },
   {
     step: 6,
-    title: '大功告成！你已成功 Onboard。',
-    subtitle: '我們已收到所有基礎資料，你的專屬會計師將會於 24 小時內與你聯繫。',
+    title: '大功告成！開始記錄你嘅收支啦',
+    subtitle: '你隨時可以喺「我的文件」上傳 BR 證書等文件，等會計師需要時用。',
     autoAdvance: false,
   },
 ];
@@ -295,10 +295,12 @@ export const STEP4_SECTION_LABELS = {
 // Messages
 export const ONBOARDING_MESSAGES = {
   personalAccountWarning: '小貼士：私人戶口會預設為『手動確認』，確保買餸 🥦、交罰款 🚘 呢啲私人消費唔會誤當公司支出！',
-  completionMessage: '我們已收到所有基礎資料，你的專屬會計師將會於 24 小時內與你聯繫，討論你的具體服務方案。',
-  uploadPrompt: '如果你手頭有 BR 證書或身份證明，現在可拍照上傳。',
+  completionMessage: '你已經可以開始用 app 記錄收入同支出喇！',
+  uploadLaterTitle: '📂 文件稍後補交都得',
+  uploadLaterDescription: '喺主頁可以隨時進入「我的文件」專區，補交 BR 證書、身份證明等。',
+  uploadLaterHint: '會計師需要時會提你，唔使急住搵。',
   nextButton: '下一步',
-  completeButton: '完成',
+  completeButton: '開始使用',
   backButton: '返回',
   closeButton: '關閉',
 };
