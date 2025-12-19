@@ -32,6 +32,7 @@ export interface OnboardingFormData {
   // Step 1
   contactName: string;
   email: string;
+  whatsappPhone: string;
   companyName: string;
   
   // Step 2
@@ -67,6 +68,7 @@ export interface OnboardingState {
 export const initialFormData: OnboardingFormData = {
   contactName: '',
   email: '',
+  whatsappPhone: '',
   companyName: '',
   entityType: null,
   industries: [],
