@@ -78,6 +78,15 @@ export const Step1ContactInfo = () => {
           required
         />
         <OnboardingInput
+          label="WhatsApp 電話（選填）"
+          type="tel"
+          placeholder="9XXX XXXX"
+          value={formData.whatsappPhone}
+          onChange={(e) => updateFormData('whatsappPhone', e.target.value)}
+          prefix="+852"
+          helperText="💬 方便我哋 WhatsApp 聯絡你，更快回應問題"
+        />
+        <OnboardingInput
           label="公司/業務名稱"
           placeholder="請輸入你的公司或業務名稱"
           value={formData.companyName}
