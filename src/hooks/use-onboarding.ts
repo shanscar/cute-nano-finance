@@ -25,8 +25,12 @@ export const useOnboarding = () => {
   }, [context.formData.industries]);
 
   const isStep4Valid = useMemo(() => {
-    // At least one bank or payment platform selected
-    return context.formData.banks.length > 0 || context.formData.paymentPlatforms.length > 0;
+    const { companyBanks, personalBanks, paymentPlatforms, usesPersonalAccount } = context.formData;
+    // Must have at least one company bank or payment platform
+    const hasCompanyChannel = companyBanks.length > 0 || paymentPlatforms.length > 0;
+    // If uses personal account, must select at least one personal bank
+    const personalValid = usesPersonalAccount ? personalBanks.length > 0 : true;
+    return hasCompanyChannel && personalValid;
   }, [context.formData]);
 
   const canProceed = useMemo(() => {

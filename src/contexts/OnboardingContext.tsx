@@ -58,7 +58,14 @@ export const OnboardingProvider = ({ children }: { children: ReactNode }) => {
     field: K,
     value: OnboardingFormData[K]
   ) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+    setFormData((prev) => {
+      const newData = { ...prev, [field]: value };
+      // Clear personalBanks when usesPersonalAccount is set to false
+      if (field === 'usesPersonalAccount' && value === false) {
+        newData.personalBanks = [];
+      }
+      return newData;
+    });
   }, []);
 
   const completeOnboarding = useCallback(() => {

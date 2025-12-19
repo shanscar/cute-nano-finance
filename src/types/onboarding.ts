@@ -41,7 +41,8 @@ export interface OnboardingFormData {
   industries: IndustrySelection[];
   
   // Step 4
-  banks: BankType[];
+  companyBanks: BankType[];
+  personalBanks: BankType[];
   paymentPlatforms: PaymentPlatform[];
   usesPersonalAccount: boolean;
   
@@ -69,7 +70,8 @@ export const initialFormData: OnboardingFormData = {
   companyName: '',
   entityType: null,
   industries: [],
-  banks: [],
+  companyBanks: [],
+  personalBanks: [],
   paymentPlatforms: [],
   usesPersonalAccount: false,
   hasOverseasClients: false,

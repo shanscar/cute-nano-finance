@@ -4,7 +4,7 @@ import { OnboardingLayout } from '../OnboardingLayout';
 import { LogoGrid } from '../LogoGrid';
 import { ToggleQuestion } from '../ToggleQuestion';
 import { useOnboarding } from '@/hooks/use-onboarding';
-import { BANK_OPTIONS, PAYMENT_PLATFORM_OPTIONS, ONBOARDING_MESSAGES } from '@/config/onboarding';
+import { BANK_OPTIONS, PAYMENT_PLATFORM_OPTIONS, ONBOARDING_MESSAGES, STEP4_SECTION_LABELS } from '@/config/onboarding';
 import { BankType, PaymentPlatform } from '@/types/onboarding';
 
 export const Step4PaymentChannels = () => {
@@ -28,24 +28,48 @@ export const Step4PaymentChannels = () => {
           />
         </div>
 
-        {/* Banks section */}
+        {/* Company accounts section */}
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-4">
-            銀行帳戶
+          <h3 className="text-lg font-semibold text-foreground mb-1">
+            {STEP4_SECTION_LABELS.companyAccounts.title}
           </h3>
+          <p className="text-sm text-muted-foreground mb-4">
+            {STEP4_SECTION_LABELS.companyAccounts.subtitle}
+          </p>
           <LogoGrid
             options={BANK_OPTIONS}
-            selectedValues={formData.banks}
-            onChange={(values) => updateFormData('banks', values as BankType[])}
+            selectedValues={formData.companyBanks}
+            onChange={(values) => updateFormData('companyBanks', values as BankType[])}
             columns={3}
           />
         </div>
 
+        {/* Personal accounts section - only show when toggle is on */}
+        {formData.usesPersonalAccount && (
+          <div className="animate-fade-in">
+            <h3 className="text-lg font-semibold text-foreground mb-1">
+              {STEP4_SECTION_LABELS.personalAccounts.title}
+            </h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              {STEP4_SECTION_LABELS.personalAccounts.subtitle}
+            </p>
+            <LogoGrid
+              options={BANK_OPTIONS}
+              selectedValues={formData.personalBanks}
+              onChange={(values) => updateFormData('personalBanks', values as BankType[])}
+              columns={3}
+            />
+          </div>
+        )}
+
         {/* Payment platforms section */}
         <div>
-        <h3 className="text-lg font-semibold text-foreground mb-4">
-            虛擬銀行
+          <h3 className="text-lg font-semibold text-foreground mb-1">
+            {STEP4_SECTION_LABELS.paymentPlatforms.title}
           </h3>
+          <p className="text-sm text-muted-foreground mb-4">
+            {STEP4_SECTION_LABELS.paymentPlatforms.subtitle}
+          </p>
           <LogoGrid
             options={PAYMENT_PLATFORM_OPTIONS}
             selectedValues={formData.paymentPlatforms}
