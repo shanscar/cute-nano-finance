@@ -1,5 +1,5 @@
 // @platform: adaptable
-// Note: Uses storage abstraction layer for cross-platform compatibility
+// Uses storage abstraction layer for cross-platform compatibility
 import { createContext, useContext, useState, useCallback, ReactNode, useEffect } from 'react';
 import { OnboardingStep, OnboardingFormData, OnboardingState, initialFormData } from '@/types/onboarding';
 import { storage } from '@/lib/storage';
