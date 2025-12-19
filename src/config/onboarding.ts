@@ -12,8 +12,8 @@ export interface StepConfig {
 export const ONBOARDING_STEPS: StepConfig[] = [
   {
     step: 1,
-    title: '歡迎！首先，請填寫你的基本聯絡資料。',
-    subtitle: '我們只會在處理你的會計事務時使用。',
+    title: '你嘅資料，係慳稅嘅第一步',
+    subtitle: '我會根據你填嘅內容，為你度身訂造最佳稅務方案。',
     autoAdvance: false,
   },
   {
